@@ -1,0 +1,5188 @@
+{
+  "metadata": {
+    "project": "Monolith-Struts-Sample",
+    "path": "/Users/xiading/workspace/strutstospringdemo/Monolith-Struts-Sample",
+    "timestamp": "2026-03-20T23:50:23.831622",
+    "generator": "build_knowledge_graph.py (tree-sitter)",
+    "languages": [
+      "java"
+    ],
+    "buildSystem": "maven"
+  },
+  "stats": {
+    "files": 133,
+    "types": 134,
+    "classes": 114,
+    "interfaces": 20,
+    "enums": 0,
+    "modules": 1,
+    "dependencies": 677,
+    "module_dependencies": 0,
+    "module_aggregations": 0,
+    "by_language": {
+      "java": 134
+    },
+    "by_type": {
+      "class": 114,
+      "interface": 20
+    },
+    "by_module": {
+      "unknown": 134
+    }
+  },
+  "nodes": [
+    {
+      "id": "system:Monolith-Struts-Sample",
+      "type": "system",
+      "name": "Monolith-Struts-Sample"
+    },
+    {
+      "id": "module:skishop-monolith",
+      "type": "module",
+      "name": "skishop-monolith",
+      "artifactId": "skishop-monolith",
+      "groupId": "com.skishop",
+      "path": "/Users/xiading/workspace/strutstospringdemo/Monolith-Struts-Sample",
+      "buildSystem": "maven",
+      "properties": {
+        "project.build.sourceEncoding": "UTF-8",
+        "maven.compiler.source": "1.5",
+        "maven.compiler.target": "1.5"
+      }
+    },
+    {
+      "id": "class:com.skishop.domain.order.Order",
+      "type": "class",
+      "name": "Order",
+      "package": "com.skishop.domain.order",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.order.OrderItem",
+      "type": "class",
+      "name": "OrderItem",
+      "package": "com.skishop.domain.order",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.order.Shipment",
+      "type": "class",
+      "name": "Shipment",
+      "package": "com.skishop.domain.order",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.order.OrderShipping",
+      "type": "class",
+      "name": "OrderShipping",
+      "package": "com.skishop.domain.order",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.order.Return",
+      "type": "class",
+      "name": "Return",
+      "package": "com.skishop.domain.order",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.mail.EmailQueue",
+      "type": "class",
+      "name": "EmailQueue",
+      "package": "com.skishop.domain.mail",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.payment.Payment",
+      "type": "class",
+      "name": "Payment",
+      "package": "com.skishop.domain.payment",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.point.PointAccount",
+      "type": "class",
+      "name": "PointAccount",
+      "package": "com.skishop.domain.point",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.point.PointTransaction",
+      "type": "class",
+      "name": "PointTransaction",
+      "package": "com.skishop.domain.point",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.user.PasswordResetToken",
+      "type": "class",
+      "name": "PasswordResetToken",
+      "package": "com.skishop.domain.user",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.user.SecurityLog",
+      "type": "class",
+      "name": "SecurityLog",
+      "package": "com.skishop.domain.user",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.user.User",
+      "type": "class",
+      "name": "User",
+      "package": "com.skishop.domain.user",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.user.Role",
+      "type": "class",
+      "name": "Role",
+      "package": "com.skishop.domain.user",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.shipping.ShippingMethod",
+      "type": "class",
+      "name": "ShippingMethod",
+      "package": "com.skishop.domain.shipping",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.coupon.CouponUsage",
+      "type": "class",
+      "name": "CouponUsage",
+      "package": "com.skishop.domain.coupon",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.coupon.Coupon",
+      "type": "class",
+      "name": "Coupon",
+      "package": "com.skishop.domain.coupon",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.coupon.Campaign",
+      "type": "class",
+      "name": "Campaign",
+      "package": "com.skishop.domain.coupon",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.product.Product",
+      "type": "class",
+      "name": "Product",
+      "package": "com.skishop.domain.product",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.product.Price",
+      "type": "class",
+      "name": "Price",
+      "package": "com.skishop.domain.product",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.product.Category",
+      "type": "class",
+      "name": "Category",
+      "package": "com.skishop.domain.product",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.inventory.Inventory",
+      "type": "class",
+      "name": "Inventory",
+      "package": "com.skishop.domain.inventory",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.address.Address",
+      "type": "class",
+      "name": "Address",
+      "package": "com.skishop.domain.address",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.cart.CartItem",
+      "type": "class",
+      "name": "CartItem",
+      "package": "com.skishop.domain.cart",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.domain.cart.Cart",
+      "type": "class",
+      "name": "Cart",
+      "package": "com.skishop.domain.cart",
+      "classType": "class",
+      "layer": "model",
+      "feature": "domain",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.order.OrderFacadeImpl",
+      "type": "class",
+      "name": "OrderFacadeImpl",
+      "package": "com.skishop.service.order",
+      "classType": "class",
+      "layer": "service",
+      "feature": "order",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.order.OrderService",
+      "type": "class",
+      "name": "OrderService",
+      "package": "com.skishop.service.order",
+      "classType": "class",
+      "layer": "service",
+      "feature": "order",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.order.OrderFacade",
+      "type": "class",
+      "name": "OrderFacade",
+      "package": "com.skishop.service.order",
+      "classType": "interface",
+      "layer": "service",
+      "feature": "order",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.auth.AuthService",
+      "type": "class",
+      "name": "AuthService",
+      "package": "com.skishop.service.auth",
+      "classType": "class",
+      "layer": "service",
+      "feature": "auth",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.auth.AuthResult",
+      "type": "class",
+      "name": "AuthResult",
+      "package": "com.skishop.service.auth",
+      "classType": "class",
+      "layer": "service",
+      "feature": "auth",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.mail.MailService",
+      "type": "class",
+      "name": "MailService",
+      "package": "com.skishop.service.mail",
+      "classType": "class",
+      "layer": "service",
+      "feature": "mail",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.mail.MailConfig",
+      "type": "class",
+      "name": "MailConfig",
+      "package": "com.skishop.service.mail",
+      "classType": "class",
+      "layer": "service",
+      "feature": "mail",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.payment.PaymentInfo",
+      "type": "class",
+      "name": "PaymentInfo",
+      "package": "com.skishop.service.payment",
+      "classType": "class",
+      "layer": "service",
+      "feature": "payment",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.payment.PaymentResult",
+      "type": "class",
+      "name": "PaymentResult",
+      "package": "com.skishop.service.payment",
+      "classType": "class",
+      "layer": "service",
+      "feature": "payment",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.payment.PaymentService",
+      "type": "class",
+      "name": "PaymentService",
+      "package": "com.skishop.service.payment",
+      "classType": "class",
+      "layer": "service",
+      "feature": "payment",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.point.PointService",
+      "type": "class",
+      "name": "PointService",
+      "package": "com.skishop.service.point",
+      "classType": "class",
+      "layer": "service",
+      "feature": "point",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.catalog.ProductService",
+      "type": "class",
+      "name": "ProductService",
+      "package": "com.skishop.service.catalog",
+      "classType": "class",
+      "layer": "service",
+      "feature": "product",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.catalog.CategoryService",
+      "type": "class",
+      "name": "CategoryService",
+      "package": "com.skishop.service.catalog",
+      "classType": "class",
+      "layer": "service",
+      "feature": "category",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.tax.TaxService",
+      "type": "class",
+      "name": "TaxService",
+      "package": "com.skishop.service.tax",
+      "classType": "class",
+      "layer": "service",
+      "feature": "tax",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.user.UserService",
+      "type": "class",
+      "name": "UserService",
+      "package": "com.skishop.service.user",
+      "classType": "class",
+      "layer": "service",
+      "feature": "user",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.shipping.ShippingService",
+      "type": "class",
+      "name": "ShippingService",
+      "package": "com.skishop.service.shipping",
+      "classType": "class",
+      "layer": "service",
+      "feature": "shipping",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.coupon.CouponService",
+      "type": "class",
+      "name": "CouponService",
+      "package": "com.skishop.service.coupon",
+      "classType": "class",
+      "layer": "service",
+      "feature": "coupon",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.inventory.InventoryService",
+      "type": "class",
+      "name": "InventoryService",
+      "package": "com.skishop.service.inventory",
+      "classType": "class",
+      "layer": "service",
+      "feature": "inventory",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.service.cart.CartService",
+      "type": "class",
+      "name": "CartService",
+      "package": "com.skishop.service.cart",
+      "classType": "class",
+      "layer": "service",
+      "feature": "cart",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.common.util.PasswordHasher",
+      "type": "class",
+      "name": "PasswordHasher",
+      "package": "com.skishop.common.util",
+      "classType": "class",
+      "layer": "util",
+      "feature": "common",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.common.config.AppConfig",
+      "type": "class",
+      "name": "AppConfig",
+      "package": "com.skishop.common.config",
+      "classType": "class",
+      "layer": "config",
+      "feature": "app",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.common.dao.DataSourceLocator",
+      "type": "class",
+      "name": "DataSourceLocator",
+      "package": "com.skishop.common.dao",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "common",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.common.dao.DataSourceFactory",
+      "type": "class",
+      "name": "DataSourceFactory",
+      "package": "com.skishop.common.dao",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "common",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.common.dao.AbstractDao",
+      "type": "class",
+      "name": "AbstractDao",
+      "package": "com.skishop.common.dao",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "abstract",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.common.dao.DaoException",
+      "type": "class",
+      "name": "DaoException",
+      "package": "com.skishop.common.dao",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "dao",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.common.dao.DaoFactory",
+      "type": "class",
+      "name": "DaoFactory",
+      "package": "com.skishop.common.dao",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "common",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.common.service.ServiceLocator",
+      "type": "class",
+      "name": "ServiceLocator",
+      "package": "com.skishop.common.service",
+      "classType": "class",
+      "layer": "service",
+      "feature": "common",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.order.ReturnDaoImpl",
+      "type": "class",
+      "name": "ReturnDaoImpl",
+      "package": "com.skishop.dao.order",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "order",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.order.ReturnDao",
+      "type": "class",
+      "name": "ReturnDao",
+      "package": "com.skishop.dao.order",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "return",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.order.OrderDao",
+      "type": "class",
+      "name": "OrderDao",
+      "package": "com.skishop.dao.order",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "order",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.order.OrderDaoImpl",
+      "type": "class",
+      "name": "OrderDaoImpl",
+      "package": "com.skishop.dao.order",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "order",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.order.OrderShippingDao",
+      "type": "class",
+      "name": "OrderShippingDao",
+      "package": "com.skishop.dao.order",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "ordershipping",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.order.OrderShippingDaoImpl",
+      "type": "class",
+      "name": "OrderShippingDaoImpl",
+      "package": "com.skishop.dao.order",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "order",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.category.CategoryDaoImpl",
+      "type": "class",
+      "name": "CategoryDaoImpl",
+      "package": "com.skishop.dao.category",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "category",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.category.CategoryDao",
+      "type": "class",
+      "name": "CategoryDao",
+      "package": "com.skishop.dao.category",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "category",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.mail.EmailQueueDao",
+      "type": "class",
+      "name": "EmailQueueDao",
+      "package": "com.skishop.dao.mail",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "emailqueue",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.mail.EmailQueueDaoImpl",
+      "type": "class",
+      "name": "EmailQueueDaoImpl",
+      "package": "com.skishop.dao.mail",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "mail",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.payment.PaymentDaoImpl",
+      "type": "class",
+      "name": "PaymentDaoImpl",
+      "package": "com.skishop.dao.payment",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "payment",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.payment.PaymentDao",
+      "type": "class",
+      "name": "PaymentDao",
+      "package": "com.skishop.dao.payment",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "payment",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.point.PointTransactionDao",
+      "type": "class",
+      "name": "PointTransactionDao",
+      "package": "com.skishop.dao.point",
+      "classType": "interface",
+      "layer": "controller",
+      "feature": "pointtransaction",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.point.PointAccountDao",
+      "type": "class",
+      "name": "PointAccountDao",
+      "package": "com.skishop.dao.point",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "pointaccount",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.point.PointTransactionDaoImpl",
+      "type": "class",
+      "name": "PointTransactionDaoImpl",
+      "package": "com.skishop.dao.point",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "point",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.point.PointAccountDaoImpl",
+      "type": "class",
+      "name": "PointAccountDaoImpl",
+      "package": "com.skishop.dao.point",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "point",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.user.SecurityLogDaoImpl",
+      "type": "class",
+      "name": "SecurityLogDaoImpl",
+      "package": "com.skishop.dao.user",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "user",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.user.UserDao",
+      "type": "class",
+      "name": "UserDao",
+      "package": "com.skishop.dao.user",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "user",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.user.SecurityLogDao",
+      "type": "class",
+      "name": "SecurityLogDao",
+      "package": "com.skishop.dao.user",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "securitylog",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.user.UserDaoImpl",
+      "type": "class",
+      "name": "UserDaoImpl",
+      "package": "com.skishop.dao.user",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "user",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.user.PasswordResetTokenDao",
+      "type": "class",
+      "name": "PasswordResetTokenDao",
+      "package": "com.skishop.dao.user",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "passwordresettoken",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.user.PasswordResetTokenDaoImpl",
+      "type": "class",
+      "name": "PasswordResetTokenDaoImpl",
+      "package": "com.skishop.dao.user",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "user",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.shipping.ShippingMethodDaoImpl",
+      "type": "class",
+      "name": "ShippingMethodDaoImpl",
+      "package": "com.skishop.dao.shipping",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "shipping",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.shipping.ShippingMethodDao",
+      "type": "class",
+      "name": "ShippingMethodDao",
+      "package": "com.skishop.dao.shipping",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "shippingmethod",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.coupon.CouponDao",
+      "type": "class",
+      "name": "CouponDao",
+      "package": "com.skishop.dao.coupon",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "coupon",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.coupon.CouponUsageDao",
+      "type": "class",
+      "name": "CouponUsageDao",
+      "package": "com.skishop.dao.coupon",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "couponusage",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.coupon.CouponUsageDaoImpl",
+      "type": "class",
+      "name": "CouponUsageDaoImpl",
+      "package": "com.skishop.dao.coupon",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "coupon",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.coupon.CouponDaoImpl",
+      "type": "class",
+      "name": "CouponDaoImpl",
+      "package": "com.skishop.dao.coupon",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "coupon",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.product.PriceDaoImpl",
+      "type": "class",
+      "name": "PriceDaoImpl",
+      "package": "com.skishop.dao.product",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "product",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.product.PriceDao",
+      "type": "class",
+      "name": "PriceDao",
+      "package": "com.skishop.dao.product",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "price",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.product.ProductDaoImpl",
+      "type": "class",
+      "name": "ProductDaoImpl",
+      "package": "com.skishop.dao.product",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "product",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.product.ProductDao",
+      "type": "class",
+      "name": "ProductDao",
+      "package": "com.skishop.dao.product",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "product",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.inventory.InventoryDao",
+      "type": "class",
+      "name": "InventoryDao",
+      "package": "com.skishop.dao.inventory",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "inventory",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.inventory.InventoryDaoImpl",
+      "type": "class",
+      "name": "InventoryDaoImpl",
+      "package": "com.skishop.dao.inventory",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "inventory",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.address.UserAddressDao",
+      "type": "class",
+      "name": "UserAddressDao",
+      "package": "com.skishop.dao.address",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "useraddress",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.address.UserAddressDaoImpl",
+      "type": "class",
+      "name": "UserAddressDaoImpl",
+      "package": "com.skishop.dao.address",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "address",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.cart.CartDao",
+      "type": "class",
+      "name": "CartDao",
+      "package": "com.skishop.dao.cart",
+      "classType": "interface",
+      "layer": "repository",
+      "feature": "cart",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.dao.cart.CartDaoImpl",
+      "type": "class",
+      "name": "CartDaoImpl",
+      "package": "com.skishop.dao.cart",
+      "classType": "class",
+      "layer": "repository",
+      "feature": "cart",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.CouponForm",
+      "type": "class",
+      "name": "CouponForm",
+      "package": "com.skishop.web.form",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.AddressForm",
+      "type": "class",
+      "name": "AddressForm",
+      "package": "com.skishop.web.form",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.RegisterForm",
+      "type": "class",
+      "name": "RegisterForm",
+      "package": "com.skishop.web.form",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.FormValidationUtils",
+      "type": "class",
+      "name": "FormValidationUtils",
+      "package": "com.skishop.web.form",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.CheckoutForm",
+      "type": "class",
+      "name": "CheckoutForm",
+      "package": "com.skishop.web.form",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.AddCartForm",
+      "type": "class",
+      "name": "AddCartForm",
+      "package": "com.skishop.web.form",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.PasswordResetRequestForm",
+      "type": "class",
+      "name": "PasswordResetRequestForm",
+      "package": "com.skishop.web.form",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.ProductSearchForm",
+      "type": "class",
+      "name": "ProductSearchForm",
+      "package": "com.skishop.web.form",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.PasswordResetForm",
+      "type": "class",
+      "name": "PasswordResetForm",
+      "package": "com.skishop.web.form",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.LoginForm",
+      "type": "class",
+      "name": "LoginForm",
+      "package": "com.skishop.web.form",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "type": "class",
+      "name": "AuthRequestProcessor",
+      "package": "com.skishop.web.processor",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.CouponApplyAction",
+      "type": "class",
+      "name": "CouponApplyAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.AddressListAction",
+      "type": "class",
+      "name": "AddressListAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.OrderCancelAction",
+      "type": "class",
+      "name": "OrderCancelAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.OrderReturnAction",
+      "type": "class",
+      "name": "OrderReturnAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.RegisterAction",
+      "type": "class",
+      "name": "RegisterAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.OrderDetailAction",
+      "type": "class",
+      "name": "OrderDetailAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.PointBalanceAction",
+      "type": "class",
+      "name": "PointBalanceAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.ProductDetailAction",
+      "type": "class",
+      "name": "ProductDetailAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.CartAction",
+      "type": "class",
+      "name": "CartAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.ProductListAction",
+      "type": "class",
+      "name": "ProductListAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.PasswordResetAction",
+      "type": "class",
+      "name": "PasswordResetAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.LogoutAction",
+      "type": "class",
+      "name": "LogoutAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.AddressSaveAction",
+      "type": "class",
+      "name": "AddressSaveAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.CouponAvailableAction",
+      "type": "class",
+      "name": "CouponAvailableAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.PasswordForgotAction",
+      "type": "class",
+      "name": "PasswordForgotAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.CheckoutAction",
+      "type": "class",
+      "name": "CheckoutAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.OrderHistoryAction",
+      "type": "class",
+      "name": "OrderHistoryAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.LoginAction",
+      "type": "class",
+      "name": "LoginAction",
+      "package": "com.skishop.web.action",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.filter.RequestIdFilter",
+      "type": "class",
+      "name": "RequestIdFilter",
+      "package": "com.skishop.web.filter",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.tag.TokenTag",
+      "type": "class",
+      "name": "TokenTag",
+      "package": "com.skishop.web.tag",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminOrderListAction",
+      "type": "class",
+      "name": "AdminOrderListAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "type": "class",
+      "name": "AdminProductEditAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminProductListAction",
+      "type": "class",
+      "name": "AdminProductListAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "type": "class",
+      "name": "AdminProductDeleteAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "type": "class",
+      "name": "AdminOrderRefundAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "type": "class",
+      "name": "AdminOrderDetailAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "type": "class",
+      "name": "AdminOrderUpdateAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "type": "class",
+      "name": "AdminShippingMethodEditAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "type": "class",
+      "name": "AdminShippingMethodListAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "type": "class",
+      "name": "AdminCouponListAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "type": "class",
+      "name": "AdminCouponEditAction",
+      "package": "com.skishop.web.action.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.admin.AdminProductForm",
+      "type": "class",
+      "name": "AdminProductForm",
+      "package": "com.skishop.web.form.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.admin.AdminCouponForm",
+      "type": "class",
+      "name": "AdminCouponForm",
+      "package": "com.skishop.web.form.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    },
+    {
+      "id": "class:com.skishop.web.form.admin.AdminShippingMethodForm",
+      "type": "class",
+      "name": "AdminShippingMethodForm",
+      "package": "com.skishop.web.form.admin",
+      "classType": "class",
+      "layer": "controller",
+      "feature": "web",
+      "annotations": [],
+      "moduleName": "unknown",
+      "artifactId": "unknown",
+      "language": "java"
+    }
+  ],
+  "edges": [
+    {
+      "from": "system:Monolith-Struts-Sample",
+      "to": "module:skishop-monolith",
+      "type": "contains"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.common.dao.DaoFactory",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.dao.address.UserAddressDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.domain.address.Address",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.domain.cart.Cart",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.domain.cart.CartItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.domain.coupon.Coupon",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.domain.order.OrderItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.domain.order.OrderShipping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.domain.product.Product",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.cart.CartService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.catalog.ProductService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.coupon.CouponService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.inventory.InventoryService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.mail.MailService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.payment.PaymentInfo",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.payment.PaymentResult",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.payment.PaymentService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.point.PointService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.shipping.ShippingService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.tax.TaxService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacadeImpl",
+      "to": "class:com.skishop.service.user.UserService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderService",
+      "to": "class:com.skishop.dao.order.OrderDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderService",
+      "to": "class:com.skishop.dao.order.OrderDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderService",
+      "to": "class:com.skishop.dao.order.ReturnDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderService",
+      "to": "class:com.skishop.dao.order.ReturnDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderService",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderService",
+      "to": "class:com.skishop.domain.order.OrderItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderService",
+      "to": "class:com.skishop.domain.order.Return",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacade",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.order.OrderFacade",
+      "to": "class:com.skishop.service.payment.PaymentInfo",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.auth.AuthService",
+      "to": "class:com.skishop.dao.user.SecurityLogDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.auth.AuthService",
+      "to": "class:com.skishop.dao.user.SecurityLogDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.auth.AuthService",
+      "to": "class:com.skishop.dao.user.UserDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.auth.AuthService",
+      "to": "class:com.skishop.dao.user.UserDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.auth.AuthService",
+      "to": "class:com.skishop.domain.user.SecurityLog",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.auth.AuthService",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.auth.AuthService",
+      "to": "class:com.skishop.common.util.PasswordHasher",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.auth.AuthResult",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:com.skishop.dao.mail.EmailQueueDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:com.skishop.dao.mail.EmailQueueDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:com.skishop.domain.mail.EmailQueue",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:com.skishop.common.config.AppConfig",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:javax.mail.Authenticator",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:javax.mail.Message",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:javax.mail.MessagingException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:javax.mail.PasswordAuthentication",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:javax.mail.Session",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:javax.mail.Transport",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:javax.mail.internet.InternetAddress",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailService",
+      "to": "class:javax.mail.internet.MimeMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:com.skishop.dao.mail.EmailQueueDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:com.skishop.dao.mail.EmailQueueDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:com.skishop.domain.mail.EmailQueue",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:com.skishop.common.config.AppConfig",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:javax.mail.Authenticator",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:javax.mail.Message",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:javax.mail.MessagingException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:javax.mail.PasswordAuthentication",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:javax.mail.Session",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:javax.mail.Transport",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:javax.mail.internet.InternetAddress",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.mail.MailConfig",
+      "to": "class:javax.mail.internet.MimeMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.payment.PaymentService",
+      "to": "class:com.skishop.dao.payment.PaymentDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.payment.PaymentService",
+      "to": "class:com.skishop.dao.payment.PaymentDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.payment.PaymentService",
+      "to": "class:com.skishop.domain.payment.Payment",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.point.PointService",
+      "to": "class:com.skishop.common.dao.DataSourceLocator",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.point.PointService",
+      "to": "class:com.skishop.dao.point.PointAccountDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.point.PointService",
+      "to": "class:com.skishop.dao.point.PointAccountDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.point.PointService",
+      "to": "class:com.skishop.dao.point.PointTransactionDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.point.PointService",
+      "to": "class:com.skishop.dao.point.PointTransactionDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.point.PointService",
+      "to": "class:com.skishop.domain.point.PointAccount",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.point.PointService",
+      "to": "class:com.skishop.domain.point.PointTransaction",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.catalog.ProductService",
+      "to": "class:com.skishop.common.dao.DataSourceLocator",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.catalog.ProductService",
+      "to": "class:com.skishop.dao.product.ProductDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.catalog.ProductService",
+      "to": "class:com.skishop.dao.product.ProductDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.catalog.ProductService",
+      "to": "class:com.skishop.domain.product.Product",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.catalog.CategoryService",
+      "to": "class:com.skishop.dao.category.CategoryDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.catalog.CategoryService",
+      "to": "class:com.skishop.dao.category.CategoryDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.catalog.CategoryService",
+      "to": "class:com.skishop.domain.product.Category",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.user.UserService",
+      "to": "class:com.skishop.dao.user.UserDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.user.UserService",
+      "to": "class:com.skishop.dao.user.UserDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.user.UserService",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.shipping.ShippingService",
+      "to": "class:com.skishop.dao.order.OrderShippingDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.shipping.ShippingService",
+      "to": "class:com.skishop.dao.order.OrderShippingDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.shipping.ShippingService",
+      "to": "class:com.skishop.domain.order.OrderShipping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.coupon.CouponService",
+      "to": "class:com.skishop.dao.coupon.CouponDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.coupon.CouponService",
+      "to": "class:com.skishop.dao.coupon.CouponDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.coupon.CouponService",
+      "to": "class:com.skishop.dao.coupon.CouponUsageDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.coupon.CouponService",
+      "to": "class:com.skishop.dao.coupon.CouponUsageDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.coupon.CouponService",
+      "to": "class:com.skishop.domain.coupon.Coupon",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.coupon.CouponService",
+      "to": "class:com.skishop.domain.coupon.CouponUsage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.inventory.InventoryService",
+      "to": "class:com.skishop.common.dao.DataSourceLocator",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.inventory.InventoryService",
+      "to": "class:com.skishop.domain.cart.CartItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.inventory.InventoryService",
+      "to": "class:com.skishop.domain.inventory.Inventory",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.cart.CartService",
+      "to": "class:com.skishop.dao.cart.CartDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.cart.CartService",
+      "to": "class:com.skishop.dao.cart.CartDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.cart.CartService",
+      "to": "class:com.skishop.dao.product.PriceDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.cart.CartService",
+      "to": "class:com.skishop.dao.product.PriceDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.cart.CartService",
+      "to": "class:com.skishop.domain.cart.Cart",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.cart.CartService",
+      "to": "class:com.skishop.domain.cart.CartItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.service.cart.CartService",
+      "to": "class:com.skishop.domain.product.Price",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.dao.DataSourceLocator",
+      "to": "class:javax.naming.Context",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.dao.DataSourceLocator",
+      "to": "class:javax.naming.InitialContext",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.dao.DataSourceLocator",
+      "to": "class:javax.naming.NamingException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.dao.DataSourceLocator",
+      "to": "class:javax.sql.DataSource",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.dao.DataSourceFactory",
+      "to": "class:com.skishop.common.config.AppConfig",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.dao.DataSourceFactory",
+      "to": "class:javax.sql.DataSource",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.dao.DataSourceFactory",
+      "to": "class:org.apache.commons.dbcp.BasicDataSource",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.dao.DaoException",
+      "to": "class:com.skishop.common.dao.RuntimeException",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.common.dao.DaoFactory",
+      "to": "class:com.skishop.dao.address.UserAddressDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.dao.DaoFactory",
+      "to": "class:com.skishop.dao.address.UserAddressDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.common.dao.DaoFactory",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.auth.AuthService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.cart.CartService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.catalog.ProductService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.coupon.CouponService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.inventory.InventoryService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.mail.MailService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.order.OrderFacade",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.order.OrderFacadeImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.order.OrderService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.payment.PaymentService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.point.PointService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.shipping.ShippingService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.tax.TaxService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.common.service.ServiceLocator",
+      "to": "class:com.skishop.service.user.UserService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.ReturnDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.order.ReturnDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.ReturnDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.ReturnDaoImpl",
+      "to": "class:com.skishop.domain.order.Return",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.ReturnDao",
+      "to": "class:com.skishop.domain.order.Return",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderDao",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderDao",
+      "to": "class:com.skishop.domain.order.OrderItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderDaoImpl",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderDaoImpl",
+      "to": "class:com.skishop.domain.order.OrderItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderShippingDao",
+      "to": "class:com.skishop.domain.order.OrderShipping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderShippingDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderShippingDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderShippingDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.order.OrderShippingDaoImpl",
+      "to": "class:com.skishop.domain.order.OrderShipping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.category.CategoryDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.category.CategoryDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.category.CategoryDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.category.CategoryDaoImpl",
+      "to": "class:com.skishop.domain.product.Category",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.category.CategoryDao",
+      "to": "class:com.skishop.domain.product.Category",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.mail.EmailQueueDao",
+      "to": "class:com.skishop.domain.mail.EmailQueue",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.mail.EmailQueueDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.mail.EmailQueueDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.mail.EmailQueueDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.mail.EmailQueueDaoImpl",
+      "to": "class:com.skishop.domain.mail.EmailQueue",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.payment.PaymentDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.payment.PaymentDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.payment.PaymentDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.payment.PaymentDaoImpl",
+      "to": "class:com.skishop.domain.payment.Payment",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.payment.PaymentDao",
+      "to": "class:com.skishop.domain.payment.Payment",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.point.PointTransactionDao",
+      "to": "class:com.skishop.domain.point.PointTransaction",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.point.PointAccountDao",
+      "to": "class:com.skishop.domain.point.PointAccount",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.point.PointTransactionDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.point.PointTransactionDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.point.PointTransactionDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.point.PointTransactionDaoImpl",
+      "to": "class:com.skishop.domain.point.PointTransaction",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.point.PointAccountDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.point.PointAccountDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.point.PointAccountDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.point.PointAccountDaoImpl",
+      "to": "class:com.skishop.domain.point.PointAccount",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.SecurityLogDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.user.SecurityLogDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.SecurityLogDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.SecurityLogDaoImpl",
+      "to": "class:com.skishop.domain.user.SecurityLog",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.UserDao",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.SecurityLogDao",
+      "to": "class:com.skishop.domain.user.SecurityLog",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.UserDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.user.UserDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.UserDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.UserDaoImpl",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.PasswordResetTokenDao",
+      "to": "class:com.skishop.domain.user.PasswordResetToken",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.PasswordResetTokenDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.user.PasswordResetTokenDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.PasswordResetTokenDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.user.PasswordResetTokenDaoImpl",
+      "to": "class:com.skishop.domain.user.PasswordResetToken",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.shipping.ShippingMethodDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.shipping.ShippingMethodDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.shipping.ShippingMethodDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.shipping.ShippingMethodDaoImpl",
+      "to": "class:com.skishop.domain.shipping.ShippingMethod",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.shipping.ShippingMethodDao",
+      "to": "class:com.skishop.domain.shipping.ShippingMethod",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.coupon.CouponDao",
+      "to": "class:com.skishop.domain.coupon.Coupon",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.coupon.CouponUsageDao",
+      "to": "class:com.skishop.domain.coupon.CouponUsage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.coupon.CouponUsageDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.coupon.CouponUsageDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.coupon.CouponUsageDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.coupon.CouponUsageDaoImpl",
+      "to": "class:com.skishop.domain.coupon.CouponUsage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.coupon.CouponDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.coupon.CouponDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.coupon.CouponDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.coupon.CouponDaoImpl",
+      "to": "class:com.skishop.domain.coupon.Coupon",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.product.PriceDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.product.PriceDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.product.PriceDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.product.PriceDaoImpl",
+      "to": "class:com.skishop.domain.product.Price",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.product.PriceDao",
+      "to": "class:com.skishop.domain.product.Price",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.product.ProductDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.product.ProductDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.product.ProductDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.product.ProductDaoImpl",
+      "to": "class:com.skishop.domain.product.Product",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.product.ProductDao",
+      "to": "class:com.skishop.domain.product.Product",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.inventory.InventoryDao",
+      "to": "class:com.skishop.domain.inventory.Inventory",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.inventory.InventoryDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.inventory.InventoryDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.inventory.InventoryDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.inventory.InventoryDaoImpl",
+      "to": "class:com.skishop.domain.inventory.Inventory",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.address.UserAddressDao",
+      "to": "class:com.skishop.domain.address.Address",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.address.UserAddressDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.address.UserAddressDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.address.UserAddressDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.address.UserAddressDaoImpl",
+      "to": "class:com.skishop.domain.address.Address",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.cart.CartDao",
+      "to": "class:com.skishop.domain.cart.Cart",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.cart.CartDao",
+      "to": "class:com.skishop.domain.cart.CartItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.cart.CartDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.dao.cart.CartDaoImpl",
+      "to": "class:com.skishop.common.dao.AbstractDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.cart.CartDaoImpl",
+      "to": "class:com.skishop.common.dao.DaoException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.cart.CartDaoImpl",
+      "to": "class:com.skishop.domain.cart.Cart",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.dao.cart.CartDaoImpl",
+      "to": "class:com.skishop.domain.cart.CartItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.CouponForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.CouponForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.AddressForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.AddressForm",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.AddressForm",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.AddressForm",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.AddressForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.RegisterForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.RegisterForm",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.RegisterForm",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.RegisterForm",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.RegisterForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.RegisterForm",
+      "to": "class:com.skishop.web.form.FormValidationUtils",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.FormValidationUtils",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.FormValidationUtils",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.CheckoutForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.CheckoutForm",
+      "to": "class:com.skishop.service.payment.PaymentInfo",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.CheckoutForm",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.CheckoutForm",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.CheckoutForm",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.CheckoutForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.AddCartForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.AddCartForm",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.AddCartForm",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.AddCartForm",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.AddCartForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetRequestForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetRequestForm",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetRequestForm",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetRequestForm",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetRequestForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.ProductSearchForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.ProductSearchForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetForm",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetForm",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetForm",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.PasswordResetForm",
+      "to": "class:com.skishop.web.form.FormValidationUtils",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.LoginForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.LoginForm",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.LoginForm",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.LoginForm",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.LoginForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.struts.tiles.TilesRequestProcessor",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:javax.servlet.ServletException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.struts.Globals",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.struts.tiles.TilesRequestProcessor",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.commons.logging.Log",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.commons.logging.LogFactory",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.struts.taglib.html.Constants",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.processor.AuthRequestProcessor",
+      "to": "class:org.apache.struts.util.TokenProcessor",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:com.skishop.domain.cart.CartItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:com.skishop.domain.coupon.Coupon",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:com.skishop.service.cart.CartService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:com.skishop.service.coupon.CouponService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:com.skishop.web.form.CouponForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponApplyAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:com.skishop.dao.address.UserAddressDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:com.skishop.dao.address.UserAddressDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:com.skishop.domain.address.Address",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressListAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:com.skishop.service.order.OrderFacade",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:com.skishop.service.order.OrderFacadeImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderCancelAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:com.skishop.service.order.OrderFacade",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:com.skishop.service.order.OrderFacadeImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderReturnAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:com.skishop.common.util.PasswordHasher",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:com.skishop.service.user.UserService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:com.skishop.web.form.RegisterForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.RegisterAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:com.skishop.domain.order.OrderItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:com.skishop.service.order.OrderService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderDetailAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:com.skishop.domain.point.PointAccount",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:com.skishop.service.point.PointService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PointBalanceAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductDetailAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductDetailAction",
+      "to": "class:com.skishop.domain.product.Product",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductDetailAction",
+      "to": "class:com.skishop.service.catalog.ProductService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductDetailAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductDetailAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductDetailAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductDetailAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductDetailAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductDetailAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:com.skishop.domain.cart.Cart",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:com.skishop.domain.cart.CartItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:com.skishop.service.cart.CartService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:com.skishop.web.form.AddCartForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CartAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:com.skishop.domain.product.Product",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:com.skishop.service.catalog.ProductService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:com.skishop.service.catalog.CategoryService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:com.skishop.domain.product.Category",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:com.skishop.web.form.ProductSearchForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:org.apache.struts.util.LabelValueBean",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.ProductListAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:com.skishop.common.util.PasswordHasher",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:com.skishop.dao.user.PasswordResetTokenDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:com.skishop.dao.user.PasswordResetTokenDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:com.skishop.domain.user.PasswordResetToken",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:com.skishop.service.user.UserService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:com.skishop.web.form.PasswordResetForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordResetAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LogoutAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.LogoutAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LogoutAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LogoutAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LogoutAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LogoutAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LogoutAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LogoutAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:com.skishop.dao.address.UserAddressDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:com.skishop.dao.address.UserAddressDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:com.skishop.domain.address.Address",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:com.skishop.web.form.AddressForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.AddressSaveAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponAvailableAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponAvailableAction",
+      "to": "class:com.skishop.domain.coupon.Coupon",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponAvailableAction",
+      "to": "class:com.skishop.service.coupon.CouponService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponAvailableAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponAvailableAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponAvailableAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponAvailableAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponAvailableAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CouponAvailableAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:com.skishop.dao.user.PasswordResetTokenDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:com.skishop.dao.user.PasswordResetTokenDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:com.skishop.domain.user.PasswordResetToken",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:com.skishop.service.mail.MailService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:com.skishop.service.user.UserService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:com.skishop.web.form.PasswordResetRequestForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.PasswordForgotAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:com.skishop.common.service.ServiceLocator",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:com.skishop.service.order.OrderFacade",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:com.skishop.web.form.CheckoutForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.CheckoutAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:com.skishop.service.order.OrderService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:org.apache.commons.logging.Log",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:org.apache.commons.logging.LogFactory",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.OrderHistoryAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:com.skishop.domain.user.User",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:com.skishop.service.auth.AuthResult",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:com.skishop.service.auth.AuthService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:com.skishop.web.form.LoginForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.LoginAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.filter.RequestIdFilter",
+      "to": "class:javax.servlet.Filter",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.filter.RequestIdFilter",
+      "to": "class:javax.servlet.FilterChain",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.filter.RequestIdFilter",
+      "to": "class:javax.servlet.FilterConfig",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.filter.RequestIdFilter",
+      "to": "class:javax.servlet.ServletException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.filter.RequestIdFilter",
+      "to": "class:javax.servlet.ServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.filter.RequestIdFilter",
+      "to": "class:javax.servlet.ServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.filter.RequestIdFilter",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.filter.RequestIdFilter",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.filter.RequestIdFilter",
+      "to": "class:org.apache.log4j.MDC",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.tag.TokenTag",
+      "to": "class:javax.servlet.jsp.tagext.TagSupport",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.tag.TokenTag",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.tag.TokenTag",
+      "to": "class:javax.servlet.http.HttpSession",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.tag.TokenTag",
+      "to": "class:javax.servlet.jsp.JspException",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.tag.TokenTag",
+      "to": "class:javax.servlet.jsp.JspWriter",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.tag.TokenTag",
+      "to": "class:javax.servlet.jsp.tagext.TagSupport",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.tag.TokenTag",
+      "to": "class:org.apache.struts.Globals",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.tag.TokenTag",
+      "to": "class:org.apache.struts.taglib.html.Constants",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.tag.TokenTag",
+      "to": "class:org.apache.struts.util.TokenProcessor",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderListAction",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderListAction",
+      "to": "class:com.skishop.service.order.OrderService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderListAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderListAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderListAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderListAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderListAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.dao.inventory.InventoryDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.dao.inventory.InventoryDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.dao.product.PriceDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.dao.product.PriceDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.dao.product.ProductDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.dao.product.ProductDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.domain.inventory.Inventory",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.domain.product.Price",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.domain.product.Product",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.service.catalog.ProductService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:com.skishop.web.form.admin.AdminProductForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductEditAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductListAction",
+      "to": "class:com.skishop.domain.product.Product",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductListAction",
+      "to": "class:com.skishop.service.catalog.ProductService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductListAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductListAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductListAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductListAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductListAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:com.skishop.domain.product.Product",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:com.skishop.service.catalog.ProductService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminProductDeleteAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:com.skishop.service.order.OrderFacade",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:com.skishop.service.order.OrderFacadeImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderRefundAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "to": "class:com.skishop.domain.order.OrderItem",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "to": "class:com.skishop.service.order.OrderService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderDetailAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:com.skishop.domain.order.Order",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:com.skishop.service.order.OrderService",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminOrderUpdateAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:com.skishop.dao.shipping.ShippingMethodDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:com.skishop.dao.shipping.ShippingMethodDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:com.skishop.domain.shipping.ShippingMethod",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:com.skishop.web.form.admin.AdminShippingMethodForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodEditAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "to": "class:com.skishop.dao.shipping.ShippingMethodDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "to": "class:com.skishop.dao.shipping.ShippingMethodDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "to": "class:com.skishop.domain.shipping.ShippingMethod",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminShippingMethodListAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "to": "class:com.skishop.dao.coupon.CouponDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "to": "class:com.skishop.dao.coupon.CouponDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "to": "class:com.skishop.domain.coupon.Coupon",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponListAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:com.skishop.dao.coupon.CouponDao",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:com.skishop.dao.coupon.CouponDaoImpl",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:com.skishop.domain.coupon.Coupon",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:com.skishop.web.form.admin.AdminCouponForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:javax.servlet.http.HttpServletResponse",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:org.apache.struts.action.Action",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:org.apache.struts.action.ActionForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:org.apache.struts.action.ActionForward",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:org.apache.struts.action.ActionMessage",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.action.admin.AdminCouponEditAction",
+      "to": "class:org.apache.struts.action.ActionMessages",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminProductForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminProductForm",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminProductForm",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminProductForm",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminProductForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminCouponForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminCouponForm",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminCouponForm",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminCouponForm",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminCouponForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminShippingMethodForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "extends"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminShippingMethodForm",
+      "to": "class:javax.servlet.http.HttpServletRequest",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminShippingMethodForm",
+      "to": "class:org.apache.struts.action.ActionErrors",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminShippingMethodForm",
+      "to": "class:org.apache.struts.action.ActionMapping",
+      "type": "imports"
+    },
+    {
+      "from": "class:com.skishop.web.form.admin.AdminShippingMethodForm",
+      "to": "class:org.apache.struts.validator.ValidatorForm",
+      "type": "imports"
+    }
+  ]
+}

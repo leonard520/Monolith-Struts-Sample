@@ -1,0 +1,37 @@
+phase_id: "Phase-3"
+phase_title: "P1 Features — Product Catalog, Auth, Cart & Checkout"
+plan_items_covered:
+  - item_id: "3.1"
+    tasks: ["T300", "T301"]
+    status: "covered"
+  - item_id: "3.2"
+    tasks: ["T302", "T303", "T304", "T305"]
+    status: "covered"
+  - item_id: "3.3"
+    tasks: ["T306", "T307", "T308", "T309"]
+    status: "covered"
+  - item_id: "3.4"
+    tasks: ["T310", "T311", "T312", "T313"]
+    status: "covered"
+  - item_id: "3.5"
+    tasks: ["T314", "T315"]
+    status: "covered"
+  - item_id: "3.6"
+    tasks: ["T316", "T317", "T318", "T319"]
+    status: "covered"
+  - item_id: "3.7"
+    tasks: ["T320", "T321", "T322", "T323"]
+    status: "covered"
+  - item_id: "3.8"
+    tasks: ["T324", "T325", "T326", "T327"]
+    status: "covered"
+  - item_id: "3.9"
+    tasks: ["T328", "T329", "T330", "T331", "T332", "T333", "T334"]
+    status: "covered"
+  - item_id: "3.10"
+    tasks: ["T335", "T336", "T337", "T338", "T339", "T340", "T341", "T342", "T343", "T344"]
+    status: "covered"
+  - item_id: "3.11"
+    tasks: ["T345", "T346", "T347", "T348", "T349", "T350"]
+    status: "covered"
+total_tasks: 51

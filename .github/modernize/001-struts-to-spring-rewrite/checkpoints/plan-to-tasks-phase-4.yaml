@@ -1,0 +1,31 @@
+phase_id: "Phase-4"
+phase_title: "P2 Features — Orders, Addresses, Points, Password Reset, Email"
+plan_items_covered:
+  - item_id: "4.1"
+    tasks: ["T400", "T401", "T402", "T403", "T404", "T405"]
+    status: "covered"
+  - item_id: "4.2"
+    tasks: ["T406", "T407", "T408", "T409", "T410"]
+    status: "covered"
+  - item_id: "4.3"
+    tasks: ["T411", "T412"]
+    status: "covered"
+  - item_id: "4.4"
+    tasks: ["T413", "T414", "T415"]
+    status: "covered"
+  - item_id: "4.5"
+    tasks: ["T416", "T417", "T418", "T419", "T420", "T421"]
+    status: "covered"
+  - item_id: "4.6"
+    tasks: ["T422", "T423", "T424", "T425", "T426", "T427"]
+    status: "covered"
+  - item_id: "4.7"
+    tasks: ["T428", "T429", "T430", "T431"]
+    status: "covered"
+  - item_id: "4.8"
+    tasks: ["T432", "T433", "T434", "T435", "T436", "T437", "T438", "T439"]
+    status: "covered"
+  - item_id: "4.9"
+    tasks: ["T440", "T441", "T442"]
+    status: "covered"
+total_tasks: 43

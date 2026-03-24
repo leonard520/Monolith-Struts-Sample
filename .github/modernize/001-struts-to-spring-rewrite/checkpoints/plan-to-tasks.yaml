@@ -1,0 +1,254 @@
+# Plan-to-Tasks Traceability Checkpoint (Merged)
+# Merged from 7 phase checkpoint fragments
+# Generated: 2026-03-21
+
+metadata:
+  generated: "2026-03-21"
+  source_plan: "plan.md"
+  target_tasks: "tasks.md"
+  total_phases: 7
+  upstream_checkpoint: "checkpoints/spec-to-plan.yaml"
+
+summary:
+  total_plan_items: 55
+  covered_plan_items: 55
+  missing_plan_items: 0
+  coverage_percentage: 100.0
+  total_tasks: 273
+
+phases:
+  - phase_id: "Phase-1"
+    phase_title: "Project Foundation & Spring Boot Scaffolding"
+    plan_items_covered:
+      - item_id: "1.1"
+        tasks: ["T100", "T101", "T102", "T103", "T104"]
+        status: "covered"
+      - item_id: "1.2"
+        tasks: ["T105"]
+        status: "covered"
+      - item_id: "1.3"
+        tasks: ["T106", "T107", "T108", "T109"]
+        status: "covered"
+      - item_id: "1.4"
+        tasks: ["T110", "T111", "T112"]
+        status: "covered"
+      - item_id: "1.5"
+        tasks: ["T113", "T114"]
+        status: "covered"
+      - item_id: "1.6"
+        tasks: ["T115", "T116", "T117", "T118", "T119", "T120", "T121", "T122", "T123", "T124", "T125", "T126", "T127", "T128", "T129", "T130", "T131", "T132", "T133"]
+        status: "covered"
+      - item_id: "1.7"
+        tasks: ["T134", "T135", "T136", "T137", "T138", "T139", "T140", "T141", "T142", "T143", "T144", "T145", "T146", "T147"]
+        status: "covered"
+      - item_id: "1.8"
+        tasks: ["T148", "T149"]
+        status: "covered"
+    total_tasks: 50
+
+  - phase_id: "Phase-2"
+    phase_title: "Cross-Cutting Infrastructure"
+    plan_items_covered:
+      - item_id: "2.1"
+        tasks: ["T200", "T201"]
+        status: "covered"
+      - item_id: "2.2"
+        tasks: ["T202", "T203"]
+        status: "covered"
+      - item_id: "2.3"
+        tasks: ["T204", "T205"]
+        status: "covered"
+      - item_id: "2.4"
+        tasks: ["T206"]
+        status: "covered"
+      - item_id: "2.5"
+        tasks: ["T207", "T208", "T209"]
+        status: "covered"
+      - item_id: "2.6"
+        tasks: ["T210", "T211", "T212", "T213"]
+        status: "covered"
+      - item_id: "2.7"
+        tasks: ["T214", "T215"]
+        status: "covered"
+      - item_id: "2.8"
+        tasks: ["T216"]
+        status: "covered"
+      - item_id: "2.9"
+        tasks: ["T217"]
+        status: "covered"
+      - item_id: "2.10"
+        tasks: ["T218", "T219"]
+        status: "covered"
+    total_tasks: 20
+
+  - phase_id: "Phase-3"
+    phase_title: "P1 Features — Product Catalog, Auth, Cart & Checkout"
+    plan_items_covered:
+      - item_id: "3.1"
+        tasks: ["T300", "T301"]
+        status: "covered"
+      - item_id: "3.2"
+        tasks: ["T302", "T303", "T304", "T305"]
+        status: "covered"
+      - item_id: "3.3"
+        tasks: ["T306", "T307", "T308", "T309"]
+        status: "covered"
+      - item_id: "3.4"
+        tasks: ["T310", "T311", "T312", "T313"]
+        status: "covered"
+      - item_id: "3.5"
+        tasks: ["T314", "T315"]
+        status: "covered"
+      - item_id: "3.6"
+        tasks: ["T316", "T317", "T318", "T319"]
+        status: "covered"
+      - item_id: "3.7"
+        tasks: ["T320", "T321", "T322", "T323"]
+        status: "covered"
+      - item_id: "3.8"
+        tasks: ["T324", "T325", "T326", "T327"]
+        status: "covered"
+      - item_id: "3.9"
+        tasks: ["T328", "T329", "T330", "T331", "T332", "T333", "T334"]
+        status: "covered"
+      - item_id: "3.10"
+        tasks: ["T335", "T336", "T337", "T338", "T339", "T340", "T341", "T342", "T343", "T344"]
+        status: "covered"
+      - item_id: "3.11"
+        tasks: ["T345", "T346", "T347", "T348", "T349", "T350"]
+        status: "covered"
+    total_tasks: 51
+
+  - phase_id: "Phase-4"
+    phase_title: "P2 Features — Orders, Addresses, Points, Password Reset, Email"
+    plan_items_covered:
+      - item_id: "4.1"
+        tasks: ["T400", "T401", "T402", "T403", "T404", "T405"]
+        status: "covered"
+      - item_id: "4.2"
+        tasks: ["T406", "T407", "T408", "T409", "T410"]
+        status: "covered"
+      - item_id: "4.3"
+        tasks: ["T411", "T412"]
+        status: "covered"
+      - item_id: "4.4"
+        tasks: ["T413", "T414", "T415"]
+        status: "covered"
+      - item_id: "4.5"
+        tasks: ["T416", "T417", "T418", "T419", "T420", "T421"]
+        status: "covered"
+      - item_id: "4.6"
+        tasks: ["T422", "T423", "T424", "T425", "T426", "T427"]
+        status: "covered"
+      - item_id: "4.7"
+        tasks: ["T428", "T429", "T430", "T431"]
+        status: "covered"
+      - item_id: "4.8"
+        tasks: ["T432", "T433", "T434", "T435", "T436", "T437", "T438", "T439"]
+        status: "covered"
+      - item_id: "4.9"
+        tasks: ["T440", "T441", "T442"]
+        status: "covered"
+    total_tasks: 43
+
+  - phase_id: "Phase-5"
+    phase_title: "P3 Features — Admin Management"
+    plan_items_covered:
+      - item_id: "5.1"
+        tasks: ["T500", "T501", "T502", "T503", "T504", "T505"]
+        status: "covered"
+      - item_id: "5.2"
+        tasks: ["T506", "T507", "T508", "T509", "T510", "T511"]
+        status: "covered"
+      - item_id: "5.3"
+        tasks: ["T512", "T513", "T514", "T515", "T516"]
+        status: "covered"
+      - item_id: "5.4"
+        tasks: ["T517", "T518", "T519", "T520", "T521"]
+        status: "covered"
+      - item_id: "5.5"
+        tasks: ["T522", "T523", "T524", "T525"]
+        status: "covered"
+      - item_id: "5.6"
+        tasks: ["T526", "T527", "T528", "T529", "T530", "T531", "T532", "T533"]
+        status: "covered"
+      - item_id: "5.7"
+        tasks: ["T534", "T535", "T536", "T537", "T538"]
+        status: "covered"
+    total_tasks: 39
+
+  - phase_id: "Phase-6"
+    phase_title: "Test Migration"
+    plan_items_covered:
+      - item_id: "6.1"
+        tasks: ["T600", "T601", "T602", "T603"]
+        status: "covered"
+      - item_id: "6.2"
+        tasks: ["T604", "T605", "T606", "T607", "T608", "T609", "T610", "T611", "T612", "T613", "T614", "T615"]
+        status: "covered"
+      - item_id: "6.3"
+        tasks: ["T616", "T617", "T618", "T619", "T620", "T621", "T622", "T623", "T624", "T625", "T626", "T627", "T628", "T629", "T630", "T631", "T632", "T633", "T634", "T635", "T636", "T637", "T638"]
+        status: "covered"
+      - item_id: "6.4"
+        tasks: ["T639", "T640"]
+        status: "covered"
+      - item_id: "6.5"
+        tasks: ["T641", "T642", "T643", "T644"]
+        status: "covered"
+    total_tasks: 45
+
+  - phase_id: "Phase-7"
+    phase_title: "Deployment & End-to-End Validation"
+    plan_items_covered:
+      - item_id: "7.1"
+        tasks: ["T700", "T701", "T702", "T703", "T704"]
+        status: "covered"
+      - item_id: "7.2"
+        tasks: ["T705", "T706", "T707", "T708", "T709"]
+        status: "covered"
+      - item_id: "7.3"
+        tasks: ["T710", "T711"]
+        status: "covered"
+      - item_id: "7.4"
+        tasks: ["T712", "T713", "T714", "T715", "T716"]
+        status: "covered"
+      - item_id: "7.5"
+        tasks: ["T717", "T718", "T719", "T720", "T721", "T722", "T723", "T724"]
+        status: "covered"
+    total_tasks: 25
+
+# Upstream traceability
+upstream:
+  checkpoint: "checkpoints/spec-to-plan.yaml"
+  spec_requirements: 50
+  spec_coverage: 100.0
+  plan_items: 55
+  plan_coverage: 100.0
+
+# Validation results
+validation:
+  passed: true
+  plan_items_total: 55
+  plan_items_covered: 55
+  coverage_percentage: 100.0
+  tasks_generated: 273
+  all_plan_items_covered: true
+  no_duplicate_task_ids: true
+  no_orphan_tasks: true
+  validated_by: "modernize-gatekeep"
+  validated_at: "2026-03-21"
+  constitution_compliance:
+    principle_I_functional_equivalence: "PASS — all user stories mapped to controller tasks with test coverage"
+    principle_II_layered_architecture: "PASS — no cross-layer violations in task descriptions"
+    principle_III_schema_integrity: "PASS — no schema modification tasks; DAO tasks preserve SQL"
+    principle_IV_incremental_verifiability: "PASS — each phase ends with compile+test gate tasks"
+    principle_V_minimal_complexity: "PASS — tasks use only approved stack components"
+  total_unique_tasks: 273
+  task_id_ranges:
+    Phase-1: "T100–T149"
+    Phase-2: "T200–T219"
+    Phase-3: "T300–T350"
+    Phase-4: "T400–T442"
+    Phase-5: "T500–T538"
+    Phase-6: "T600–T644"
+    Phase-7: "T700–T724"

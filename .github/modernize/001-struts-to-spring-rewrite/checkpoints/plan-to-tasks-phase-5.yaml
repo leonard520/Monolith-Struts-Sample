@@ -1,0 +1,25 @@
+phase_id: "Phase-5"
+phase_title: "P3 Features — Admin Management"
+plan_items_covered:
+  - item_id: "5.1"
+    tasks: ["T500", "T501", "T502", "T503", "T504", "T505"]
+    status: "covered"
+  - item_id: "5.2"
+    tasks: ["T506", "T507", "T508", "T509", "T510", "T511"]
+    status: "covered"
+  - item_id: "5.3"
+    tasks: ["T512", "T513", "T514", "T515", "T516"]
+    status: "covered"
+  - item_id: "5.4"
+    tasks: ["T517", "T518", "T519", "T520", "T521"]
+    status: "covered"
+  - item_id: "5.5"
+    tasks: ["T522", "T523", "T524", "T525"]
+    status: "covered"
+  - item_id: "5.6"
+    tasks: ["T526", "T527", "T528", "T529", "T530", "T531", "T532", "T533"]
+    status: "covered"
+  - item_id: "5.7"
+    tasks: ["T534", "T535", "T536", "T537", "T538"]
+    status: "covered"
+total_tasks: 39

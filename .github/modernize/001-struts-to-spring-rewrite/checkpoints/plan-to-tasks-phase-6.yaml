@@ -1,0 +1,19 @@
+phase_id: "Phase-6"
+phase_title: "Test Migration"
+plan_items_covered:
+  - item_id: "6.1"
+    tasks: ["T600", "T601", "T602", "T603"]
+    status: "covered"
+  - item_id: "6.2"
+    tasks: ["T604", "T605", "T606", "T607", "T608", "T609", "T610", "T611", "T612", "T613", "T614", "T615"]
+    status: "covered"
+  - item_id: "6.3"
+    tasks: ["T616", "T617", "T618", "T619", "T620", "T621", "T622", "T623", "T624", "T625", "T626", "T627", "T628", "T629", "T630", "T631", "T632", "T633", "T634", "T635", "T636", "T637", "T638"]
+    status: "covered"
+  - item_id: "6.4"
+    tasks: ["T639", "T640"]
+    status: "covered"
+  - item_id: "6.5"
+    tasks: ["T641", "T642", "T643", "T644"]
+    status: "covered"
+total_tasks: 45

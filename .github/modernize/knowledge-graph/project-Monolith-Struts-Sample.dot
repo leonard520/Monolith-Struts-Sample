@@ -1,0 +1,572 @@
+digraph project_Monolith_Struts_Sample {
+  rankdir=TB;
+  compound=true;
+  node [fontname="Arial", fontsize=10];
+  edge [fontname="Arial", fontsize=8];
+  label="Monolith-Struts-Sample";
+
+  subgraph cluster_pkg_0 {
+    label="com.skishop.common.config";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_common_config_AppConfig" [label="AppConfig\n«config»", shape=box, style=filled, fillcolor="#d1c4e9"];
+  }
+
+  subgraph cluster_pkg_1 {
+    label="com.skishop.common.dao";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_common_dao_DataSourceLocator" [label="DataSourceLocator\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_common_dao_DataSourceFactory" [label="DataSourceFactory\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_common_dao_AbstractDao" [label="AbstractDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_common_dao_DaoException" [label="DaoException\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_common_dao_DaoFactory" [label="DaoFactory\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_2 {
+    label="com.skishop.common.service";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_common_service_ServiceLocator" [label="ServiceLocator\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_3 {
+    label="com.skishop.common.util";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_common_util_PasswordHasher" [label="PasswordHasher\n«util»", shape=box, style=filled, fillcolor="#e0e0e0"];
+  }
+
+  subgraph cluster_pkg_4 {
+    label="com.skishop.dao.address";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_address_UserAddressDao" [label="UserAddressDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_address_UserAddressDaoImpl" [label="UserAddressDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_5 {
+    label="com.skishop.dao.cart";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_cart_CartDao" [label="CartDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_cart_CartDaoImpl" [label="CartDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_6 {
+    label="com.skishop.dao.category";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_category_CategoryDaoImpl" [label="CategoryDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_category_CategoryDao" [label="CategoryDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_7 {
+    label="com.skishop.dao.coupon";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_coupon_CouponDao" [label="CouponDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_coupon_CouponUsageDao" [label="CouponUsageDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_coupon_CouponUsageDaoImpl" [label="CouponUsageDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_coupon_CouponDaoImpl" [label="CouponDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_8 {
+    label="com.skishop.dao.inventory";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_inventory_InventoryDao" [label="InventoryDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_inventory_InventoryDaoImpl" [label="InventoryDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_9 {
+    label="com.skishop.dao.mail";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_mail_EmailQueueDao" [label="EmailQueueDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_mail_EmailQueueDaoImpl" [label="EmailQueueDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_10 {
+    label="com.skishop.dao.order";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_order_ReturnDaoImpl" [label="ReturnDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_order_ReturnDao" [label="ReturnDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_order_OrderDao" [label="OrderDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_order_OrderDaoImpl" [label="OrderDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_order_OrderShippingDao" [label="OrderShippingDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_order_OrderShippingDaoImpl" [label="OrderShippingDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_11 {
+    label="com.skishop.dao.payment";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_payment_PaymentDaoImpl" [label="PaymentDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_payment_PaymentDao" [label="PaymentDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_12 {
+    label="com.skishop.dao.point";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_point_PointTransactionDao" [label="PointTransactionDao\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_dao_point_PointAccountDao" [label="PointAccountDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_point_PointTransactionDaoImpl" [label="PointTransactionDaoImpl\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_dao_point_PointAccountDaoImpl" [label="PointAccountDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_13 {
+    label="com.skishop.dao.product";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_product_PriceDaoImpl" [label="PriceDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_product_PriceDao" [label="PriceDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_product_ProductDaoImpl" [label="ProductDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_product_ProductDao" [label="ProductDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_14 {
+    label="com.skishop.dao.shipping";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_shipping_ShippingMethodDaoImpl" [label="ShippingMethodDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_shipping_ShippingMethodDao" [label="ShippingMethodDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_15 {
+    label="com.skishop.dao.user";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_dao_user_SecurityLogDaoImpl" [label="SecurityLogDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_user_UserDao" [label="UserDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_user_SecurityLogDao" [label="SecurityLogDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_user_UserDaoImpl" [label="UserDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_user_PasswordResetTokenDao" [label="PasswordResetTokenDao\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+    "class_com_skishop_dao_user_PasswordResetTokenDaoImpl" [label="PasswordResetTokenDaoImpl\n«repository»", shape=box, style=filled, fillcolor="#fff9c4"];
+  }
+
+  subgraph cluster_pkg_16 {
+    label="com.skishop.domain.address";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_address_Address" [label="Address\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+  }
+
+  subgraph cluster_pkg_17 {
+    label="com.skishop.domain.cart";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_cart_CartItem" [label="CartItem\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_cart_Cart" [label="Cart\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+  }
+
+  subgraph cluster_pkg_18 {
+    label="com.skishop.domain.coupon";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_coupon_CouponUsage" [label="CouponUsage\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_coupon_Coupon" [label="Coupon\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_coupon_Campaign" [label="Campaign\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+  }
+
+  subgraph cluster_pkg_19 {
+    label="com.skishop.domain.inventory";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_inventory_Inventory" [label="Inventory\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+  }
+
+  subgraph cluster_pkg_20 {
+    label="com.skishop.domain.mail";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_mail_EmailQueue" [label="EmailQueue\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+  }
+
+  subgraph cluster_pkg_21 {
+    label="com.skishop.domain.order";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_order_Order" [label="Order\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_order_OrderItem" [label="OrderItem\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_order_Shipment" [label="Shipment\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_order_OrderShipping" [label="OrderShipping\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_order_Return" [label="Return\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+  }
+
+  subgraph cluster_pkg_22 {
+    label="com.skishop.domain.payment";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_payment_Payment" [label="Payment\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+  }
+
+  subgraph cluster_pkg_23 {
+    label="com.skishop.domain.point";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_point_PointAccount" [label="PointAccount\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_point_PointTransaction" [label="PointTransaction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+  }
+
+  subgraph cluster_pkg_24 {
+    label="com.skishop.domain.product";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_product_Product" [label="Product\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_product_Price" [label="Price\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_product_Category" [label="Category\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+  }
+
+  subgraph cluster_pkg_25 {
+    label="com.skishop.domain.shipping";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_shipping_ShippingMethod" [label="ShippingMethod\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+  }
+
+  subgraph cluster_pkg_26 {
+    label="com.skishop.domain.user";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_domain_user_PasswordResetToken" [label="PasswordResetToken\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_user_SecurityLog" [label="SecurityLog\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_user_User" [label="User\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+    "class_com_skishop_domain_user_Role" [label="Role\n«model»", shape=box, style=filled, fillcolor="#f8bbd0"];
+  }
+
+  subgraph cluster_pkg_27 {
+    label="com.skishop.service.auth";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_auth_AuthService" [label="AuthService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+    "class_com_skishop_service_auth_AuthResult" [label="AuthResult\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_28 {
+    label="com.skishop.service.cart";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_cart_CartService" [label="CartService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_29 {
+    label="com.skishop.service.catalog";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_catalog_ProductService" [label="ProductService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+    "class_com_skishop_service_catalog_CategoryService" [label="CategoryService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_30 {
+    label="com.skishop.service.coupon";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_coupon_CouponService" [label="CouponService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_31 {
+    label="com.skishop.service.inventory";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_inventory_InventoryService" [label="InventoryService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_32 {
+    label="com.skishop.service.mail";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_mail_MailService" [label="MailService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+    "class_com_skishop_service_mail_MailConfig" [label="MailConfig\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_33 {
+    label="com.skishop.service.order";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_order_OrderFacadeImpl" [label="OrderFacadeImpl\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+    "class_com_skishop_service_order_OrderService" [label="OrderService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+    "class_com_skishop_service_order_OrderFacade" [label="OrderFacade\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_34 {
+    label="com.skishop.service.payment";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_payment_PaymentInfo" [label="PaymentInfo\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+    "class_com_skishop_service_payment_PaymentResult" [label="PaymentResult\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+    "class_com_skishop_service_payment_PaymentService" [label="PaymentService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_35 {
+    label="com.skishop.service.point";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_point_PointService" [label="PointService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_36 {
+    label="com.skishop.service.shipping";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_shipping_ShippingService" [label="ShippingService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_37 {
+    label="com.skishop.service.tax";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_tax_TaxService" [label="TaxService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_38 {
+    label="com.skishop.service.user";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_service_user_UserService" [label="UserService\n«service»", shape=box, style=filled, fillcolor="#c8e6c9"];
+  }
+
+  subgraph cluster_pkg_39 {
+    label="com.skishop.web.action";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_web_action_CouponApplyAction" [label="CouponApplyAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_AddressListAction" [label="AddressListAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_OrderCancelAction" [label="OrderCancelAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_OrderReturnAction" [label="OrderReturnAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_RegisterAction" [label="RegisterAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_OrderDetailAction" [label="OrderDetailAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_PointBalanceAction" [label="PointBalanceAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_ProductDetailAction" [label="ProductDetailAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_CartAction" [label="CartAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_ProductListAction" [label="ProductListAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_PasswordResetAction" [label="PasswordResetAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_LogoutAction" [label="LogoutAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_AddressSaveAction" [label="AddressSaveAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_CouponAvailableAction" [label="CouponAvailableAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_PasswordForgotAction" [label="PasswordForgotAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_CheckoutAction" [label="CheckoutAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_OrderHistoryAction" [label="OrderHistoryAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_LoginAction" [label="LoginAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+  }
+
+  subgraph cluster_pkg_40 {
+    label="com.skishop.web.action.admin";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_web_action_admin_AdminOrderListAction" [label="AdminOrderListAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_admin_AdminProductEditAction" [label="AdminProductEditAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_admin_AdminProductListAction" [label="AdminProductListAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_admin_AdminProductDeleteAction" [label="AdminProductDeleteAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_admin_AdminOrderRefundAction" [label="AdminOrderRefundAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_admin_AdminOrderDetailAction" [label="AdminOrderDetailAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_admin_AdminOrderUpdateAction" [label="AdminOrderUpdateAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_admin_AdminShippingMethodEditAction" [label="AdminShippingMethodEditAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_admin_AdminShippingMethodListAction" [label="AdminShippingMethodListAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_admin_AdminCouponListAction" [label="AdminCouponListAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_action_admin_AdminCouponEditAction" [label="AdminCouponEditAction\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+  }
+
+  subgraph cluster_pkg_41 {
+    label="com.skishop.web.filter";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_web_filter_RequestIdFilter" [label="RequestIdFilter\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+  }
+
+  subgraph cluster_pkg_42 {
+    label="com.skishop.web.form";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_web_form_CouponForm" [label="CouponForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_AddressForm" [label="AddressForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_RegisterForm" [label="RegisterForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_FormValidationUtils" [label="FormValidationUtils\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_CheckoutForm" [label="CheckoutForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_AddCartForm" [label="AddCartForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_PasswordResetRequestForm" [label="PasswordResetRequestForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_ProductSearchForm" [label="ProductSearchForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_PasswordResetForm" [label="PasswordResetForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_LoginForm" [label="LoginForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+  }
+
+  subgraph cluster_pkg_43 {
+    label="com.skishop.web.form.admin";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_web_form_admin_AdminProductForm" [label="AdminProductForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_admin_AdminCouponForm" [label="AdminCouponForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+    "class_com_skishop_web_form_admin_AdminShippingMethodForm" [label="AdminShippingMethodForm\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+  }
+
+  subgraph cluster_pkg_44 {
+    label="com.skishop.web.processor";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_web_processor_AuthRequestProcessor" [label="AuthRequestProcessor\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+  }
+
+  subgraph cluster_pkg_45 {
+    label="com.skishop.web.tag";
+    style=filled;
+    fillcolor="#e8f5e9";
+    color="#2e7d32";
+
+    "class_com_skishop_web_tag_TokenTag" [label="TokenTag\n«controller»", shape=box, style=filled, fillcolor="#bbdefb"];
+  }
+
+  "class_com_skishop_dao_order_ReturnDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_order_OrderDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_order_OrderShippingDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_category_CategoryDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_mail_EmailQueueDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_payment_PaymentDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_point_PointTransactionDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_point_PointAccountDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_user_SecurityLogDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_user_UserDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_user_PasswordResetTokenDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_shipping_ShippingMethodDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_coupon_CouponUsageDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_coupon_CouponDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_product_PriceDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_product_ProductDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_inventory_InventoryDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_address_UserAddressDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_dao_cart_CartDaoImpl" -> "class_com_skishop_common_dao_AbstractDao" [style=solid];
+  "class_com_skishop_web_form_CouponForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_form_AddressForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_form_RegisterForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_form_CheckoutForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_form_AddCartForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_form_PasswordResetRequestForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_form_ProductSearchForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_form_PasswordResetForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_form_LoginForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_processor_AuthRequestProcessor" -> "class_org_apache_struts_tiles_TilesRequestProcessor" [style=solid];
+  "class_com_skishop_web_action_CouponApplyAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_AddressListAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_OrderCancelAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_OrderReturnAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_RegisterAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_OrderDetailAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_PointBalanceAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_ProductDetailAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_CartAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_ProductListAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_PasswordResetAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_LogoutAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_AddressSaveAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_CouponAvailableAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_PasswordForgotAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_CheckoutAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_OrderHistoryAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_LoginAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_tag_TokenTag" -> "class_javax_servlet_jsp_tagext_TagSupport" [style=solid];
+  "class_com_skishop_web_action_admin_AdminOrderListAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_admin_AdminProductEditAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_admin_AdminProductListAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_admin_AdminProductDeleteAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_admin_AdminOrderRefundAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_admin_AdminOrderDetailAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_admin_AdminOrderUpdateAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_admin_AdminShippingMethodEditAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_admin_AdminShippingMethodListAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_admin_AdminCouponListAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_action_admin_AdminCouponEditAction" -> "class_org_apache_struts_action_Action" [style=solid];
+  "class_com_skishop_web_form_admin_AdminProductForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_form_admin_AdminCouponForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+  "class_com_skishop_web_form_admin_AdminShippingMethodForm" -> "class_org_apache_struts_validator_ValidatorForm" [style=solid];
+}
