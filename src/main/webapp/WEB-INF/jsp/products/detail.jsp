@@ -1,21 +1,18 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="skishop" uri="http://skishop.com/tags" %>
 <h2>商品詳細</h2>
-<logic:present name="product">
-  <bean:define id="productId" name="product" property="id" type="java.lang.String"/>
-  <h3><bean:write name="product" property="name" filter="true"/></h3>
-  <p>ブランド: <bean:write name="product" property="brand" filter="true"/></p>
-  <p>SKU: <bean:write name="product" property="sku" filter="true"/></p>
-  <p>カテゴリ: <bean:write name="product" property="categoryId" filter="true"/></p>
-  <p>説明: <bean:write name="product" property="description" filter="true"/></p>
-  <html:form action="/cart.do" method="post">
-    <html:hidden property="productId" value="<%= org.apache.struts.util.ResponseUtils.filter(productId) %>"/>
-    <html:text property="quantity" value="1" size="3"/>
-    <html:token/>
-    <html:submit value="カートへ追加"/>
-  </html:form>
-</logic:present>
-<logic:notPresent name="product">
-  <p>商品情報が取得できませんでした。</p>
-</logic:notPresent>
+<c:if test="${not empty product}">
+    <h3><c:out value="${product.name}"/></h3>
+    <p>ブランド: <c:out value="${product.brand}"/></p>
+    <p>SKU: <c:out value="${product.sku}"/></p>
+    <p>カテゴリ: <c:out value="${product.categoryId}"/></p>
+    <p>説明: <c:out value="${product.description}"/></p>
+    <form action="<c:url value='/cart'/>" method="post">
+        <input type="hidden" name="productId" value="${product.id}"/>
+        <input type="text" name="quantity" value="1" size="3"/>
+        <skishop:csrfToken/>
+        <button type="submit">カートへ追加</button>
+    </form>
+</c:if>
+<c:if test="${empty product}"><p>商品情報が取得できませんでした。</p></c:if>

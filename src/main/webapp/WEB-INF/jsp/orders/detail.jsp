@@ -1,30 +1,23 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <h2>注文詳細</h2>
-<logic:present name="order">
-  <p>注文番号: <bean:write name="order" property="orderNumber" filter="true"/></p>
-  <p>状態: <bean:write name="order" property="status" filter="true"/></p>
-  <p>支払状態: <bean:write name="order" property="paymentStatus" filter="true"/></p>
-  <p>合計金額: <bean:write name="order" property="totalAmount" filter="true"/></p>
-</logic:present>
-<logic:notPresent name="order">
-  <p>注文情報がありません。</p>
-</logic:notPresent>
-<logic:present name="orderItems">
+<c:if test="${not empty order}">
+  <p>注文番号: <c:out value="${order.orderNumber}"/></p>
+  <p>状態: <c:out value="${order.status}"/></p>
+  <p>支払状態: <c:out value="${order.paymentStatus}"/></p>
+  <p>合計金額: <c:out value="${order.totalAmount}"/></p>
+</c:if>
+<c:if test="${empty order}"><p>注文情報がありません。</p></c:if>
+<c:if test="${not empty orderItems}">
   <h3>商品明細</h3>
   <table border="1">
-    <tr>
-      <th>商品名</th>
-      <th>数量</th>
-      <th>小計</th>
-    </tr>
-    <logic:iterate id="item" name="orderItems">
+    <tr><th>商品名</th><th>数量</th><th>小計</th></tr>
+    <c:forEach items="${orderItems}" var="item">
       <tr>
-        <td><bean:write name="item" property="productName" filter="true"/></td>
-        <td><bean:write name="item" property="quantity" filter="true"/></td>
-        <td><bean:write name="item" property="subtotal" filter="true"/></td>
+        <td><c:out value="${item.productName}"/></td>
+        <td><c:out value="${item.quantity}"/></td>
+        <td><c:out value="${item.subtotal}"/></td>
       </tr>
-    </logic:iterate>
+    </c:forEach>
   </table>
-</logic:present>
+</c:if>

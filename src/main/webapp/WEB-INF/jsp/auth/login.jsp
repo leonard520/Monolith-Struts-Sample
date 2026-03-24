@@ -1,23 +1,13 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="skishop" uri="http://skishop.com/tags" %>
 <h2>ログイン</h2>
-<html:form action="/login.do" method="post">
-  <table>
-    <tr>
-      <th><bean:message key="label.email"/></th>
-      <td><html:text property="email" size="30"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.password"/></th>
-      <td><html:password property="password" size="30"/></td>
-    </tr>
-  </table>
-  <html:token/>
-  <html:submit value="ログイン"/>
-</html:form>
-<p>
-  <html:link page="/register.do">会員登録</html:link>
-  |
-  <html:link page="/password/forgot.do">パスワードを忘れた場合</html:link>
-</p>
+<form action="<c:url value='/login'/>" method="post">
+    <table>
+        <tr><th>メールアドレス</th><td><input type="text" name="email" size="30"/></td></tr>
+        <tr><th>パスワード</th><td><input type="password" name="password" size="30"/></td></tr>
+    </table>
+    <skishop:csrfToken/>
+    <button type="submit">ログイン</button>
+</form>
+<p><a href="<c:url value='/register'/>">会員登録</a> | <a href="<c:url value='/password/forgot'/>">パスワードを忘れた場合</a></p>

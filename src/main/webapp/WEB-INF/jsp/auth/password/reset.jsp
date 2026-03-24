@@ -1,22 +1,13 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="skishop" uri="http://skishop.com/tags" %>
 <h2>パスワードリセット</h2>
-<html:form action="/password/reset.do" method="post">
+<form action="<c:url value='/password/reset'/>" method="post">
   <table>
-    <tr>
-      <th><bean:message key="label.token"/></th>
-      <td><html:text property="token" size="40"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.password"/></th>
-      <td><html:password property="password" size="30"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.passwordConfirm"/></th>
-      <td><html:password property="passwordConfirm" size="30"/></td>
-    </tr>
+    <tr><th>トークン</th><td><input type="text" name="token" size="40"/></td></tr>
+    <tr><th>新パスワード</th><td><input type="password" name="password" size="30"/></td></tr>
+    <tr><th>パスワード(確認)</th><td><input type="password" name="passwordConfirm" size="30"/></td></tr>
   </table>
-  <html:token/>
-  <html:submit value="更新"/>
-</html:form>
+  <skishop:csrfToken/>
+  <button type="submit">更新</button>
+</form>

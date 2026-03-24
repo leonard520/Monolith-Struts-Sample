@@ -1,81 +1,47 @@
 package com.skishop.dao.coupon;
 
-import com.skishop.common.dao.AbstractDao;
-import com.skishop.common.dao.DaoException;
 import com.skishop.domain.coupon.CouponUsage;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Timestamp;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
-public class CouponUsageDaoImpl extends AbstractDao implements CouponUsageDao {
-  public void insert(CouponUsage usage) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("INSERT INTO coupon_usage(id, coupon_id, user_id, order_id, discount_applied, used_at) VALUES(?,?,?,?,?,?)");
-      ps.setString(1, usage.getId());
-      ps.setString(2, usage.getCouponId());
-      ps.setString(3, usage.getUserId());
-      ps.setString(4, usage.getOrderId());
-      ps.setBigDecimal(5, usage.getDiscountApplied());
-      ps.setTimestamp(6, toTimestamp(usage.getUsedAt()));
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
-    }
-  }
+@Repository
+public class CouponUsageDaoImpl implements CouponUsageDao {
+    private final JdbcTemplate jdbcTemplate;
 
-  public CouponUsage findByOrderId(String orderId) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("SELECT id, coupon_id, user_id, order_id, discount_applied, used_at FROM coupon_usage WHERE order_id = ?");
-      ps.setString(1, orderId);
-      rs = ps.executeQuery();
-      if (rs.next()) {
-        CouponUsage usage = new CouponUsage();
-        usage.setId(rs.getString("id"));
-        usage.setCouponId(rs.getString("coupon_id"));
-        usage.setUserId(rs.getString("user_id"));
-        usage.setOrderId(rs.getString("order_id"));
-        usage.setDiscountApplied(rs.getBigDecimal("discount_applied"));
-        usage.setUsedAt(rs.getTimestamp("used_at"));
-        return usage;
-      }
-      return null;
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(rs, ps, con);
+    public CouponUsageDaoImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
-  }
 
-  public void deleteByOrderId(String orderId) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("DELETE FROM coupon_usage WHERE order_id = ?");
-      ps.setString(1, orderId);
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
+    public void insert(CouponUsage usage) {
+        jdbcTemplate.update(
+            "INSERT INTO coupon_usage(id, coupon_id, user_id, order_id, discount_applied, used_at) VALUES(?,?,?,?,?,?)",
+            usage.getId(), usage.getCouponId(), usage.getUserId(), usage.getOrderId(),
+            usage.getDiscountApplied(), toTimestamp(usage.getUsedAt()));
     }
-  }
 
-  private Timestamp toTimestamp(java.util.Date date) {
-    if (date == null) {
-      return null;
+    public CouponUsage findByOrderId(String orderId) {
+        var results = jdbcTemplate.query(
+            "SELECT id, coupon_id, user_id, order_id, discount_applied, used_at FROM coupon_usage WHERE order_id = ?",
+            (rs, rowNum) -> {
+                CouponUsage u = new CouponUsage();
+                u.setId(rs.getString("id"));
+                u.setCouponId(rs.getString("coupon_id"));
+                u.setUserId(rs.getString("user_id"));
+                u.setOrderId(rs.getString("order_id"));
+                u.setDiscountApplied(rs.getBigDecimal("discount_applied"));
+                u.setUsedAt(rs.getTimestamp("used_at"));
+                return u;
+            }, orderId);
+        return results.isEmpty() ? null : results.get(0);
     }
-    return new Timestamp(date.getTime());
-  }
+
+    public void deleteByOrderId(String orderId) {
+        jdbcTemplate.update("DELETE FROM coupon_usage WHERE order_id = ?", orderId);
+    }
+
+    private Timestamp toTimestamp(java.util.Date date) {
+        if (date == null) return null;
+        return new Timestamp(date.getTime());
+    }
 }

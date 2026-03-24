@@ -1,21 +1,20 @@
-<%@ taglib uri="/WEB-INF/struts-tiles.tld" prefix="tiles" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <title><tiles:getAsString name="title"/></title>
-  <link rel="stylesheet" href="<html:rewrite page='/assets/css/app.css'/>" />
+    <meta charset="UTF-8">
+    <title><c:out value="${pageTitle}" default="Ski Resort Shop"/></title>
+    <link rel="stylesheet" href="<c:url value='/assets/css/app.css'/>" />
 </head>
 <body>
-  <div class="app-header">
-    <tiles:insert attribute="header"/>
-  </div>
-  <div class="site-container">
-    <tiles:insert attribute="messages"/>
-    <tiles:insert attribute="body"/>
-  </div>
-  <tiles:insert attribute="footer"/>
+    <div class="app-header">
+        <jsp:include page="/WEB-INF/jsp/common/header.jsp"/>
+    </div>
+    <div class="site-container">
+        <jsp:include page="/WEB-INF/jsp/common/messages.jsp"/>
+        <jsp:include page="${bodyContent}"/>
+    </div>
+    <jsp:include page="/WEB-INF/jsp/common/footer.jsp"/>
 </body>
 </html>

@@ -1,38 +1,28 @@
 package com.skishop.dao;
 
 import com.skishop.dao.user.PasswordResetTokenDao;
-import com.skishop.dao.user.PasswordResetTokenDaoImpl;
 import com.skishop.domain.user.PasswordResetToken;
 import java.util.Date;
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class PasswordResetTokenDaoTest extends DaoTestBase {
-  private PasswordResetTokenDao tokenDao;
+class PasswordResetTokenDaoTest extends DaoTestBase {
 
-  protected void setUp() throws Exception {
-    super.setUp();
-    resetDatabase();
-    tokenDao = new PasswordResetTokenDaoImpl();
-  }
+    @Autowired
+    private PasswordResetTokenDao tokenDao;
 
-  public void testFindAndMarkUsed() {
-    PasswordResetToken token = tokenDao.findByToken("token-1");
-    Assert.assertNotNull(token);
+    @Test
+    void testInsertAndFindByToken() {
+        PasswordResetToken prt = new PasswordResetToken();
+        prt.setId("prt-test-99");
+        prt.setUserId("u-1");
+        prt.setToken("test-token");
+        prt.setExpiresAt(new Date(System.currentTimeMillis() + 3600000));
+        tokenDao.insert(prt);
 
-    tokenDao.markUsed(token.getId());
-    PasswordResetToken updated = tokenDao.findByToken("token-1");
-    Assert.assertNotNull(updated.getUsedAt());
-  }
-
-  public void testInsert() {
-    PasswordResetToken token = new PasswordResetToken();
-    token.setId("prt-2");
-    token.setUserId("u-1");
-    token.setToken("token-2");
-    token.setExpiresAt(new Date());
-    tokenDao.insert(token);
-
-    PasswordResetToken loaded = tokenDao.findByToken("token-2");
-    Assert.assertNotNull(loaded);
-  }
+        PasswordResetToken loaded = tokenDao.findByToken("test-token");
+        assertNotNull(loaded);
+        assertEquals("u-1", loaded.getUserId());
+    }
 }

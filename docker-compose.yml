@@ -1,33 +1,25 @@
 # version removed (deprecated)
 services:
   app:
-    platform: linux/amd64
     build:
       context: .
       dockerfile: Dockerfile
-      # Dockerfile内で ./binaries/jdk-1_5_0_22-linux-amd64.bin をCOPYしローカルJDKを優先利用
-      args:
-        JDK_LICENSE: accept
-        JDK_URL: https://archive.org/download/Java_5_update_22/jdk-1_5_0_22-linux-amd64.bin
-        JDK_SHA256: 5383e5e28872a1c7e75e9df40d931797e8bef1e11d49f662492da2b75f7cc3c0
-    container_name: skishop-app-tomcat6
+    container_name: skishop-app
     ports:
       - "8080:8080"
     environment:
-      DB_HOST: db
-      DB_PORT: 5432
-      DB_NAME: skishop
-      DB_USER: skishop
-      DB_PASSWORD: skishop
-      DB_POOL_MAX_ACTIVE: 20
-      DB_POOL_MAX_IDLE: 5
-      DB_POOL_MAX_WAIT: 10000
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/skishop
+      SPRING_DATASOURCE_USERNAME: skishop
+      SPRING_DATASOURCE_PASSWORD: skishop
+      SPRING_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE: 20
+      SPRING_DATASOURCE_HIKARI_MINIMUM_IDLE: 5
+      SPRING_MAIL_HOST: localhost
+      SPRING_MAIL_PORT: 25
     depends_on:
-      - db
-    volumes:
-      - tomcat-logs:/opt/tomcat/logs
+      db:
+        condition: service_healthy
   db:
-    image: postgres:9.2
+    image: postgres:16
     platform: linux/amd64
     container_name: skishop-db
     environment:
@@ -47,4 +39,3 @@ services:
       retries: 5
 volumes:
   db-data:
-  tomcat-logs:

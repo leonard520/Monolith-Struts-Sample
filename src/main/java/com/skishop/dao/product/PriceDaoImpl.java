@@ -1,25 +1,43 @@
 package com.skishop.dao.product;
 
-import com.skishop.common.dao.AbstractDao;
-import com.skishop.common.dao.DaoException;
 import com.skishop.domain.product.Price;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
-public class PriceDaoImpl extends AbstractDao implements PriceDao {
-  public Price findByProductId(String productId) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("SELECT id, product_id, regular_price, sale_price, currency_code, sale_start_date, sale_end_date FROM prices WHERE product_id = ?");
-      ps.setString(1, productId);
-      rs = ps.executeQuery();
-      if (rs.next()) {
+@Repository
+public class PriceDaoImpl implements PriceDao {
+    private final JdbcTemplate jdbcTemplate;
+
+    public PriceDaoImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+
+    public Price findByProductId(String productId) {
+        var results = jdbcTemplate.query(
+            "SELECT id, product_id, regular_price, sale_price, currency_code, sale_start_date, sale_end_date FROM prices WHERE product_id = ?",
+            (rs, rowNum) -> mapPrice(rs), productId);
+        return results.isEmpty() ? null : results.get(0);
+    }
+
+    public void saveOrUpdate(Price price) {
+        Price existing = findByProductId(price.getProductId());
+        if (existing == null) {
+            jdbcTemplate.update(
+                "INSERT INTO prices(id, product_id, regular_price, sale_price, currency_code, sale_start_date, sale_end_date) VALUES(?,?,?,?,?,?,?)",
+                price.getId(), price.getProductId(), price.getRegularPrice(), price.getSalePrice(),
+                price.getCurrencyCode(), toTimestamp(price.getSaleStartDate()), toTimestamp(price.getSaleEndDate()));
+        } else {
+            jdbcTemplate.update(
+                "UPDATE prices SET regular_price = ?, sale_price = ?, currency_code = ?, sale_start_date = ?, sale_end_date = ? WHERE id = ?",
+                price.getRegularPrice(), price.getSalePrice(), price.getCurrencyCode(),
+                toTimestamp(price.getSaleStartDate()), toTimestamp(price.getSaleEndDate()), existing.getId());
+        }
+    }
+
+    private Price mapPrice(ResultSet rs) throws SQLException {
         Price price = new Price();
         price.setId(rs.getString("id"));
         price.setProductId(rs.getString("product_id"));
@@ -29,69 +47,10 @@ public class PriceDaoImpl extends AbstractDao implements PriceDao {
         price.setSaleStartDate(rs.getTimestamp("sale_start_date"));
         price.setSaleEndDate(rs.getTimestamp("sale_end_date"));
         return price;
-      }
-      return null;
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(rs, ps, con);
     }
-  }
 
-  public void saveOrUpdate(Price price) {
-    Price existing = findByProductId(price.getProductId());
-    if (existing == null) {
-      insert(price);
-    } else {
-      update(existing.getId(), price);
+    private Timestamp toTimestamp(java.util.Date date) {
+        if (date == null) return null;
+        return new Timestamp(date.getTime());
     }
-  }
-
-  private void insert(Price price) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("INSERT INTO prices(id, product_id, regular_price, sale_price, currency_code, sale_start_date, sale_end_date) VALUES(?,?,?,?,?,?,?)");
-      ps.setString(1, price.getId());
-      ps.setString(2, price.getProductId());
-      ps.setBigDecimal(3, price.getRegularPrice());
-      ps.setBigDecimal(4, price.getSalePrice());
-      ps.setString(5, price.getCurrencyCode());
-      ps.setTimestamp(6, toTimestamp(price.getSaleStartDate()));
-      ps.setTimestamp(7, toTimestamp(price.getSaleEndDate()));
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
-    }
-  }
-
-  private void update(String id, Price price) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("UPDATE prices SET regular_price = ?, sale_price = ?, currency_code = ?, sale_start_date = ?, sale_end_date = ? WHERE id = ?");
-      ps.setBigDecimal(1, price.getRegularPrice());
-      ps.setBigDecimal(2, price.getSalePrice());
-      ps.setString(3, price.getCurrencyCode());
-      ps.setTimestamp(4, toTimestamp(price.getSaleStartDate()));
-      ps.setTimestamp(5, toTimestamp(price.getSaleEndDate()));
-      ps.setString(6, id);
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
-    }
-  }
-
-  private Timestamp toTimestamp(java.util.Date date) {
-    if (date == null) {
-      return null;
-    }
-    return new Timestamp(date.getTime());
-  }
 }

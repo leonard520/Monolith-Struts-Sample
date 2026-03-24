@@ -1,131 +1,68 @@
 package com.skishop.dao.user;
 
-import com.skishop.common.dao.AbstractDao;
-import com.skishop.common.dao.DaoException;
 import com.skishop.domain.user.User;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
-public class UserDaoImpl extends AbstractDao implements UserDao {
-  public User findByEmail(String email) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("SELECT id, email, username, password_hash, salt, status, role, created_at, updated_at FROM users WHERE email = ?");
-      ps.setString(1, email);
-      rs = ps.executeQuery();
-      if (rs.next()) {
-        return mapUser(rs);
-      }
-      return null;
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(rs, ps, con);
+@Repository
+public class UserDaoImpl implements UserDao {
+    private final JdbcTemplate jdbcTemplate;
+
+    public UserDaoImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
-  }
 
-  public User findById(String id) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("SELECT id, email, username, password_hash, salt, status, role, created_at, updated_at FROM users WHERE id = ?");
-      ps.setString(1, id);
-      rs = ps.executeQuery();
-      if (rs.next()) {
-        return mapUser(rs);
-      }
-      return null;
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(rs, ps, con);
+    public User findByEmail(String email) {
+        var results = jdbcTemplate.query(
+            "SELECT id, email, username, password_hash, salt, status, role, created_at, updated_at FROM users WHERE email = ?",
+            (rs, rowNum) -> mapUser(rs), email);
+        return results.isEmpty() ? null : results.get(0);
     }
-  }
 
-  public void insert(User user) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("INSERT INTO users(id, email, username, password_hash, salt, status, role, created_at, updated_at) VALUES(?,?,?,?,?,?,?,?,?)");
-      ps.setString(1, user.getId());
-      ps.setString(2, user.getEmail());
-      ps.setString(3, user.getUsername());
-      ps.setString(4, user.getPasswordHash());
-      ps.setString(5, user.getSalt());
-      ps.setString(6, user.getStatus());
-      ps.setString(7, user.getRole());
-      ps.setTimestamp(8, toTimestamp(user.getCreatedAt()));
-      ps.setTimestamp(9, toTimestamp(user.getUpdatedAt()));
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
+    public User findById(String id) {
+        var results = jdbcTemplate.query(
+            "SELECT id, email, username, password_hash, salt, status, role, created_at, updated_at FROM users WHERE id = ?",
+            (rs, rowNum) -> mapUser(rs), id);
+        return results.isEmpty() ? null : results.get(0);
     }
-  }
 
-  public void updatePassword(String userId, String passwordHash, String salt) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("UPDATE users SET password_hash = ?, salt = ?, updated_at = ? WHERE id = ?");
-      ps.setString(1, passwordHash);
-      ps.setString(2, salt);
-      ps.setTimestamp(3, new Timestamp(System.currentTimeMillis()));
-      ps.setString(4, userId);
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
+    public void insert(User user) {
+        jdbcTemplate.update(
+            "INSERT INTO users(id, email, username, password_hash, salt, status, role, created_at, updated_at) VALUES(?,?,?,?,?,?,?,?,?)",
+            user.getId(), user.getEmail(), user.getUsername(), user.getPasswordHash(),
+            user.getSalt(), user.getStatus(), user.getRole(),
+            toTimestamp(user.getCreatedAt()), toTimestamp(user.getUpdatedAt()));
     }
-  }
 
-  public void updateStatus(String userId, String status) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("UPDATE users SET status = ?, updated_at = ? WHERE id = ?");
-      ps.setString(1, status);
-      ps.setTimestamp(2, new Timestamp(System.currentTimeMillis()));
-      ps.setString(3, userId);
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
+    public void updatePassword(String userId, String passwordHash, String salt) {
+        jdbcTemplate.update("UPDATE users SET password_hash = ?, salt = ?, updated_at = ? WHERE id = ?",
+            passwordHash, salt, new Timestamp(System.currentTimeMillis()), userId);
     }
-  }
 
-  private User mapUser(ResultSet rs) throws SQLException {
-    User user = new User();
-    user.setId(rs.getString("id"));
-    user.setEmail(rs.getString("email"));
-    user.setUsername(rs.getString("username"));
-    user.setPasswordHash(rs.getString("password_hash"));
-    user.setSalt(rs.getString("salt"));
-    user.setStatus(rs.getString("status"));
-    user.setRole(rs.getString("role"));
-    user.setCreatedAt(rs.getTimestamp("created_at"));
-    user.setUpdatedAt(rs.getTimestamp("updated_at"));
-    return user;
-  }
-
-  private Timestamp toTimestamp(java.util.Date date) {
-    if (date == null) {
-      return null;
+    public void updateStatus(String userId, String status) {
+        jdbcTemplate.update("UPDATE users SET status = ?, updated_at = ? WHERE id = ?",
+            status, new Timestamp(System.currentTimeMillis()), userId);
     }
-    return new Timestamp(date.getTime());
-  }
+
+    private User mapUser(ResultSet rs) throws SQLException {
+        User user = new User();
+        user.setId(rs.getString("id"));
+        user.setEmail(rs.getString("email"));
+        user.setUsername(rs.getString("username"));
+        user.setPasswordHash(rs.getString("password_hash"));
+        user.setSalt(rs.getString("salt"));
+        user.setStatus(rs.getString("status"));
+        user.setRole(rs.getString("role"));
+        user.setCreatedAt(rs.getTimestamp("created_at"));
+        user.setUpdatedAt(rs.getTimestamp("updated_at"));
+        return user;
+    }
+
+    private Timestamp toTimestamp(java.util.Date date) {
+        if (date == null) return null;
+        return new Timestamp(date.getTime());
+    }
 }

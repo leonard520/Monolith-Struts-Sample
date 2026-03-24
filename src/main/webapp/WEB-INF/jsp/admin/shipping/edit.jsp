@@ -1,31 +1,16 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="skishop" uri="http://skishop.com/tags" %>
 <h2>配送方法編集</h2>
-<html:form action="/admin/shipping/edit.do" method="post">
-  <html:hidden property="id"/>
+<form action="<c:url value='/admin/shipping/edit'/>" method="post">
+  <input type="hidden" name="id" value="${adminShippingMethodForm.id}"/>
   <table>
-    <tr>
-      <th><bean:message key="label.shippingCode"/></th>
-      <td><html:text property="code" size="12"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.shippingName"/></th>
-      <td><html:text property="name" size="20"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.shippingFee"/></th>
-      <td><html:text property="fee" size="10"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.shippingActive"/></th>
-      <td><html:checkbox property="active"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.shippingSort"/></th>
-      <td><html:text property="sortOrder" size="4"/></td>
-    </tr>
+    <tr><th>コード</th><td><input type="text" name="code" value="${adminShippingMethodForm.code}" size="12"/></td></tr>
+    <tr><th>名称</th><td><input type="text" name="name" value="${adminShippingMethodForm.name}" size="20"/></td></tr>
+    <tr><th>送料</th><td><input type="text" name="fee" value="${adminShippingMethodForm.fee}" size="10"/></td></tr>
+    <tr><th>有効</th><td><input type="checkbox" name="active" value="true" ${adminShippingMethodForm.active ? 'checked' : ''}/></td></tr>
+    <tr><th>並び順</th><td><input type="text" name="sortOrder" value="${adminShippingMethodForm.sortOrder}" size="4"/></td></tr>
   </table>
-  <html:token/>
-  <html:submit value="更新"/>
-</html:form>
+  <skishop:csrfToken/>
+  <button type="submit">更新</button>
+</form>

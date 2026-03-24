@@ -1,14 +1,19 @@
 package com.skishop.service.catalog;
 
 import com.skishop.dao.category.CategoryDao;
-import com.skishop.dao.category.CategoryDaoImpl;
 import com.skishop.domain.product.Category;
 import java.util.List;
+import org.springframework.stereotype.Service;
 
+@Service
 public class CategoryService {
-  private final CategoryDao categoryDao = new CategoryDaoImpl();
+    private final CategoryDao categoryDao;
 
-  public List<Category> listAll() {
-    return categoryDao.findAll();
-  }
+    public CategoryService(CategoryDao categoryDao) {
+        this.categoryDao = categoryDao;
+    }
+
+    public List<Category> listAll() {
+        return categoryDao.findAll();
+    }
 }

@@ -1,15 +1,10 @@
 package com.skishop.web.form;
 
-import org.apache.struts.validator.ValidatorForm;
+import jakarta.validation.constraints.NotBlank;
 
-public class CouponForm extends ValidatorForm {
-  private String code;
+public class CouponForm {
+    @NotBlank private String code;
 
-  public String getCode() {
-    return code;
-  }
-
-  public void setCode(String code) {
-    this.code = code;
-  }
+    public String getCode() { return code; }
+    public void setCode(String code) { this.code = code; }
 }

@@ -1,41 +1,40 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <div class="inner">
-  <div class="logo"><html:link page="/home.do">Ski Resort Shop</html:link></div>
-  <ul class="app-nav">
-    <li><html:link page="/home.do">ホーム</html:link></li>
-    <li><html:link page="/products.do">商品</html:link></li>
-    <li><html:link page="/coupons/available.do">クーポン</html:link></li>
-    <logic:present name="loginUser" scope="session">
-      <li><html:link page="/orders.do">注文履歴</html:link></li>
-      <li><html:link page="/points.do">ポイント</html:link></li>
-      <li><html:link page="/addresses.do">住所帳</html:link></li>
-      <logic:equal name="loginUser" property="role" value="ADMIN">
-        <li><html:link page="/admin/products.do">管理:商品</html:link></li>
-        <li><html:link page="/admin/orders.do">管理:注文</html:link></li>
-        <li><html:link page="/admin/coupons.do">管理:クーポン</html:link></li>
-        <li><html:link page="/admin/shipping.do">管理:配送方法</html:link></li>
-      </logic:equal>
-    </logic:present>
-    <logic:notPresent name="loginUser" scope="session">
-      <li><html:link page="/login.do">ログイン</html:link></li>
-      <li><html:link page="/register.do">会員登録</html:link></li>
-    </logic:notPresent>
-  </ul>
-  <div class="actions">
-    <html:form action="/products.do" method="get" styleClass="header-search">
-      <input type="text" name="keyword" value="" placeholder="商品名やブランドで検索" />
-      <button type="submit">🔍</button>
-    </html:form>
-    <html:link page="/cart.do" styleClass="btn">🛒 カート</html:link>
-    <logic:present name="loginUser" scope="session">
-      <span class="user-name">こんにちは、<bean:write name="loginUser" property="username"/></span>
-      <html:link page="/logout.do">ログアウト</html:link>
-    </logic:present>
-    <logic:notPresent name="loginUser" scope="session">
-      <html:link page="/login.do">ログイン</html:link>
-      <html:link page="/register.do" styleClass="btn">会員登録</html:link>
-    </logic:notPresent>
-  </div>
+    <div class="logo"><a href="<c:url value='/home'/>">Ski Resort Shop</a></div>
+    <ul class="app-nav">
+        <li><a href="<c:url value='/home'/>">ホーム</a></li>
+        <li><a href="<c:url value='/products'/>">商品</a></li>
+        <li><a href="<c:url value='/coupons'/>">クーポン</a></li>
+        <c:if test="${not empty sessionScope.loginUser}">
+            <li><a href="<c:url value='/orders'/>">注文履歴</a></li>
+            <li><a href="<c:url value='/points'/>">ポイント</a></li>
+            <li><a href="<c:url value='/account/addresses'/>">住所帳</a></li>
+            <c:if test="${sessionScope.loginUser.role == 'ADMIN'}">
+                <li><a href="<c:url value='/admin/products'/>">管理:商品</a></li>
+                <li><a href="<c:url value='/admin/orders'/>">管理:注文</a></li>
+                <li><a href="<c:url value='/admin/coupons'/>">管理:クーポン</a></li>
+                <li><a href="<c:url value='/admin/shipping'/>">管理:配送方法</a></li>
+            </c:if>
+        </c:if>
+        <c:if test="${empty sessionScope.loginUser}">
+            <li><a href="<c:url value='/login'/>">ログイン</a></li>
+            <li><a href="<c:url value='/register'/>">会員登録</a></li>
+        </c:if>
+    </ul>
+    <div class="actions">
+        <form action="<c:url value='/products'/>" method="get" class="header-search">
+            <input type="text" name="keyword" value="" placeholder="商品名やブランドで検索" />
+            <button type="submit">🔍</button>
+        </form>
+        <a href="<c:url value='/cart'/>" class="btn">🛒 カート</a>
+        <c:if test="${not empty sessionScope.loginUser}">
+            <span class="user-name">こんにちは、<c:out value="${sessionScope.loginUser.username}"/></span>
+            <a href="<c:url value='/logout'/>">ログアウト</a>
+        </c:if>
+        <c:if test="${empty sessionScope.loginUser}">
+            <a href="<c:url value='/login'/>">ログイン</a>
+            <a href="<c:url value='/register'/>" class="btn">会員登録</a>
+        </c:if>
+    </div>
 </div>

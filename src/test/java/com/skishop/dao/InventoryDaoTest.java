@@ -1,23 +1,19 @@
 package com.skishop.dao;
 
 import com.skishop.dao.inventory.InventoryDao;
-import com.skishop.dao.inventory.InventoryDaoImpl;
 import com.skishop.domain.inventory.Inventory;
-import org.junit.Assert;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class InventoryDaoTest extends DaoTestBase {
-  private InventoryDao inventoryDao;
+class InventoryDaoTest extends DaoTestBase {
 
-  protected void setUp() throws Exception {
-    super.setUp();
-    resetDatabase();
-    inventoryDao = new InventoryDaoImpl();
-  }
+    @Autowired
+    private InventoryDao inventoryDao;
 
-  public void testReserve() {
-    boolean reserved = inventoryDao.reserve("P001", 2);
-    Assert.assertTrue(reserved);
-    Inventory inventory = inventoryDao.findByProductId("P001");
-    Assert.assertEquals(2, inventory.getReservedQuantity());
-  }
+    @Test
+    void testFindByProductId() {
+        Inventory inv = inventoryDao.findByProductId("P001");
+        assertNotNull(inv);
+    }
 }

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<Context>
-  <Resource name="jdbc/skishop" auth="Container" type="javax.sql.DataSource"
-            maxActive="20" maxIdle="5" maxWait="10000" username="${db.username}"
-            password="${db.password}" driverClassName="org.postgresql.Driver"
-            url="${db.url}"/>
-</Context>

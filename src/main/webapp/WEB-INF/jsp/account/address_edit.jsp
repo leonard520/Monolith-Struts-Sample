@@ -1,43 +1,19 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="skishop" uri="http://skishop.com/tags" %>
 <h2>住所編集</h2>
-<html:form action="/addresses/save.do" method="post">
-  <html:hidden property="id"/>
+<form action="<c:url value='/addresses/save'/>" method="post">
+  <input type="hidden" name="id" value="${addressForm.id}"/>
   <table>
-    <tr>
-      <th><bean:message key="label.addressLabel"/></th>
-      <td><html:text property="label" size="20"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.recipientName"/></th>
-      <td><html:text property="recipientName" size="30"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.postalCode"/></th>
-      <td><html:text property="postalCode" size="10"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.prefecture"/></th>
-      <td><html:text property="prefecture" size="20"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.address1"/></th>
-      <td><html:text property="address1" size="40"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.address2"/></th>
-      <td><html:text property="address2" size="40"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.phone"/></th>
-      <td><html:text property="phone" size="20"/></td>
-    </tr>
-    <tr>
-      <th><bean:message key="label.isDefault"/></th>
-      <td><html:checkbox property="isDefault"/></td>
-    </tr>
+    <tr><th>ラベル</th><td><input type="text" name="label" value="${addressForm.label}" size="20"/></td></tr>
+    <tr><th>宛名</th><td><input type="text" name="recipientName" value="${addressForm.recipientName}" size="30"/></td></tr>
+    <tr><th>郵便番号</th><td><input type="text" name="postalCode" value="${addressForm.postalCode}" size="10"/></td></tr>
+    <tr><th>都道府県</th><td><input type="text" name="prefecture" value="${addressForm.prefecture}" size="20"/></td></tr>
+    <tr><th>住所1</th><td><input type="text" name="address1" value="${addressForm.address1}" size="40"/></td></tr>
+    <tr><th>住所2</th><td><input type="text" name="address2" value="${addressForm.address2}" size="40"/></td></tr>
+    <tr><th>電話番号</th><td><input type="text" name="phone" value="${addressForm.phone}" size="20"/></td></tr>
+    <tr><th>既定にする</th><td><input type="checkbox" name="isDefault" value="true" ${addressForm.isDefault ? 'checked' : ''}/></td></tr>
   </table>
-  <html:token/>
-  <html:submit value="保存"/>
-</html:form>
+  <skishop:csrfToken/>
+  <button type="submit">保存</button>
+</form>

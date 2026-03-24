@@ -1,39 +1,30 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="skishop" uri="http://skishop.com/tags" %>
 <h2>注文履歴</h2>
-<logic:empty name="orders">
-  <p>注文履歴がありません。</p>
-</logic:empty>
-<logic:notEmpty name="orders">
+<c:if test="${empty orders}"><p>注文履歴がありません。</p></c:if>
+<c:if test="${not empty orders}">
   <table border="1">
-    <tr>
-      <th>注文番号</th>
-      <th>状態</th>
-      <th>合計</th>
-      <th>操作</th>
-    </tr>
-    <logic:iterate id="order" name="orders">
-      <bean:define id="orderId" name="order" property="id" type="java.lang.String"/>
+    <tr><th>注文番号</th><th>状態</th><th>合計</th><th>操作</th></tr>
+    <c:forEach items="${orders}" var="order">
       <tr>
-        <td><bean:write name="order" property="orderNumber" filter="true"/></td>
-        <td><bean:write name="order" property="status" filter="true"/></td>
-        <td><bean:write name="order" property="totalAmount" filter="true"/></td>
+        <td><c:out value="${order.orderNumber}"/></td>
+        <td><c:out value="${order.status}"/></td>
+        <td><c:out value="${order.totalAmount}"/></td>
         <td>
-          <html:link page="/orders/detail.do" paramId="orderId" paramName="order" paramProperty="id">詳細</html:link>
-          <br/>
-          <form action="/orders/cancel.do" method="post">
-            <input type="hidden" name="orderId" value="<bean:write name='order' property='id' filter='true'/>"/>
-            <html:token/>
+          <a href="<c:url value='/orders/detail'/>?orderId=${order.id}">詳細</a><br/>
+          <form action="<c:url value='/orders/cancel'/>" method="post">
+            <input type="hidden" name="orderId" value="${order.id}"/>
+            <skishop:csrfToken/>
             <button type="submit">キャンセル</button>
           </form>
-          <form action="/orders/return.do" method="post">
-            <input type="hidden" name="orderId" value="<bean:write name='order' property='id' filter='true'/>"/>
-            <html:token/>
+          <form action="<c:url value='/orders/return'/>" method="post">
+            <input type="hidden" name="orderId" value="${order.id}"/>
+            <skishop:csrfToken/>
             <button type="submit">返品</button>
           </form>
         </td>
       </tr>
-    </logic:iterate>
+    </c:forEach>
   </table>
-</logic:notEmpty>
+</c:if>

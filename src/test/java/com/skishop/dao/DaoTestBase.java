@@ -1,96 +1,55 @@
 package com.skishop.dao;
 
-import com.skishop.common.dao.DataSourceLocator;
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.sql.Connection;
 import java.sql.Statement;
-import junit.framework.TestCase;
-import org.h2.jdbcx.JdbcDataSource;
+import javax.sql.DataSource;
+import org.junit.jupiter.api.BeforeEach;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.JdbcTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.test.context.ActiveProfiles;
 
-public abstract class DaoTestBase extends TestCase {
-  private static JdbcDataSource dataSource;
+@JdbcTest
+@ActiveProfiles("test")
+@ComponentScan(basePackages = "com.skishop.dao")
+public abstract class DaoTestBase {
 
-  protected void setUp() throws Exception {
-    super.setUp();
-    initDataSource();
-  }
+    @Autowired
+    protected DataSource dataSource;
 
-  private static synchronized void initDataSource() {
-    if (dataSource == null) {
-      dataSource = new JdbcDataSource();
-      dataSource.setURL("jdbc:h2:mem:skishop;DB_CLOSE_DELAY=-1");
-      dataSource.setUser("sa");
-      dataSource.setPassword("");
-      DataSourceLocator.getInstance().setDataSource(dataSource);
-    }
-  }
-
-  protected void resetDatabase() throws Exception {
-    Connection con = null;
-    Statement st = null;
-    try {
-      con = dataSource.getConnection();
-      st = con.createStatement();
-      st.execute("DROP ALL OBJECTS");
-      runScript(con, "/db/schema.sql");
-      runScript(con, "/db/data.sql");
-    } finally {
-      if (st != null) {
-        st.close();
-      }
-      if (con != null) {
-        con.close();
-      }
-    }
-  }
-
-  private void runScript(Connection con, String path) throws Exception {
-    InputStream stream = getClass().getResourceAsStream(path);
-    if (stream == null) {
-      throw new IllegalStateException("SQL resource not found: " + path);
-    }
-    BufferedReader reader = null;
-    Statement statement = null;
-    try {
-      reader = new BufferedReader(new InputStreamReader(stream, "UTF-8"));
-      StringBuilder buffer = new StringBuilder();
-      String line;
-      while ((line = reader.readLine()) != null) {
-        buffer.append(line);
-        buffer.append('\n');
-      }
-      String[] statements = buffer.toString().split(";");
-      statement = con.createStatement();
-      for (int i = 0; i < statements.length; i++) {
-        String sql = statements[i].trim();
-        if (sql.length() > 0) {
-          statement.execute(sql);
+    @BeforeEach
+    void resetDatabase() throws Exception {
+        try (Connection con = dataSource.getConnection();
+             Statement st = con.createStatement()) {
+            st.execute("DROP ALL OBJECTS");
+            runScript(con, "/db/schema.sql");
+            runScript(con, "/db/data.sql");
         }
-      }
-    } finally {
-      try {
-        if (statement != null) {
-          statement.close();
-        }
-      } catch (java.sql.SQLException e) {
-        // ignore cleanup errors in tests
-      }
-      try {
-        if (reader != null) {
-          reader.close();
-        }
-      } catch (java.io.IOException e) {
-        // ignore cleanup errors in tests
-      }
-      try {
-        if (stream != null) {
-          stream.close();
-        }
-      } catch (java.io.IOException e) {
-        // ignore cleanup errors in tests
-      }
     }
-  }
+
+    private void runScript(Connection con, String path) throws Exception {
+        try (InputStream stream = getClass().getResourceAsStream(path)) {
+            if (stream == null) {
+                throw new IllegalStateException("SQL resource not found: " + path);
+            }
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(stream, StandardCharsets.UTF_8));
+                 Statement statement = con.createStatement()) {
+                StringBuilder buffer = new StringBuilder();
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    buffer.append(line).append('\n');
+                }
+                for (String sql : buffer.toString().split(";")) {
+                    String trimmed = sql.trim();
+                    if (!trimmed.isEmpty()) {
+                        statement.execute(trimmed);
+                    }
+                }
+            }
+        }
+    }
 }

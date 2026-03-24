@@ -1,41 +1,35 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="skishop" uri="http://skishop.com/tags" %>
 <h2 class="page-title">カート</h2>
-<logic:empty name="cartItems">
+<c:if test="${empty cartItems}">
   <div class="card">カートは空です。</div>
-</logic:empty>
-<logic:notEmpty name="cartItems">
+</c:if>
+<c:if test="${not empty cartItems}">
   <div class="card table-responsive">
   <table>
-    <tr>
-      <th>商品名</th>
-      <th>数量</th>
-      <th>単価</th>
-    </tr>
-    <logic:iterate id="item" name="cartItems">
+    <tr><th>商品名</th><th>数量</th><th>単価</th></tr>
+    <c:forEach items="${cartItems}" var="item">
       <tr>
-        <td><bean:write name="item" property="productName" filter="true"/></td>
-        <td><bean:write name="item" property="quantity" filter="true"/></td>
-        <td><bean:write name="item" property="unitPrice" filter="true"/></td>
+        <td><c:out value="${item.productName}"/></td>
+        <td><c:out value="${item.quantity}"/></td>
+        <td><c:out value="${item.unitPrice}"/></td>
       </tr>
-    </logic:iterate>
+    </c:forEach>
   </table>
   </div>
   <div class="card cart-summary">
-    <p>小計: <strong><bean:write name="cartSubtotal" filter="true"/></strong></p>
-  <logic:present name="coupon">
-    <p>クーポン: <bean:write name="coupon" property="code" filter="true"/></p>
-    <p>割引額: <bean:write name="discountAmount" filter="true"/></p>
-  </logic:present>
+    <p>小計: <strong><c:out value="${cartSubtotal}"/></strong></p>
+    <c:if test="${not empty coupon}">
+      <p>クーポン: <c:out value="${coupon.code}"/></p>
+      <p>割引額: <c:out value="${discountAmount}"/></p>
+    </c:if>
   </div>
-</logic:notEmpty>
-
+</c:if>
 <h3>クーポン適用</h3>
-<html:form action="/coupon/apply.do" method="post">
-  <html:text property="code" size="20"/>
-  <html:token/>
-  <html:submit value="適用"/>
-</html:form>
-
-<p><html:link page="/checkout.do" styleClass="btn">チェックアウトへ</html:link></p>
+<form action="<c:url value='/coupon/apply'/>" method="post">
+  <input type="text" name="code" size="20"/>
+  <skishop:csrfToken/>
+  <button type="submit">適用</button>
+</form>
+<p><a href="<c:url value='/checkout'/>" class="btn">チェックアウトへ</a></p>

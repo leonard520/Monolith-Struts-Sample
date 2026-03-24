@@ -1,13 +1,10 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <h2>注文確認</h2>
-<logic:present name="order">
-  <p>注文番号: <bean:write name="order" property="orderNumber" filter="true"/></p>
-  <p>ステータス: <bean:write name="order" property="status" filter="true"/></p>
-  <p>合計金額: <bean:write name="order" property="totalAmount" filter="true"/></p>
-</logic:present>
-<logic:notPresent name="order">
-  <p>注文情報がありません。</p>
-</logic:notPresent>
-<p><html:link page="/orders.do">注文履歴へ</html:link></p>
+<c:if test="${not empty order}">
+  <p>注文番号: <c:out value="${order.orderNumber}"/></p>
+  <p>ステータス: <c:out value="${order.status}"/></p>
+  <p>合計金額: <c:out value="${order.totalAmount}"/></p>
+</c:if>
+<c:if test="${empty order}"><p>注文情報がありません。</p></c:if>
+<p><a href="<c:url value='/orders'/>">注文履歴へ</a></p>

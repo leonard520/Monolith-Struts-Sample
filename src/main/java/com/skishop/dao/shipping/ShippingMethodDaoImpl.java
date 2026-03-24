@@ -1,123 +1,57 @@
 package com.skishop.dao.shipping;
 
-import com.skishop.common.dao.AbstractDao;
-import com.skishop.common.dao.DaoException;
 import com.skishop.domain.shipping.ShippingMethod;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.List;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
-public class ShippingMethodDaoImpl extends AbstractDao implements ShippingMethodDao {
-  public List<ShippingMethod> listActive() {
-    Connection con = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    List<ShippingMethod> methods = new ArrayList<ShippingMethod>();
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("SELECT id, code, name, fee, is_active, sort_order FROM shipping_methods WHERE is_active = TRUE ORDER BY sort_order");
-      rs = ps.executeQuery();
-      while (rs.next()) {
-        methods.add(mapMethod(rs));
-      }
-      return methods;
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(rs, ps, con);
+@Repository
+public class ShippingMethodDaoImpl implements ShippingMethodDao {
+    private final JdbcTemplate jdbcTemplate;
+
+    public ShippingMethodDaoImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
-  }
 
-  public List<ShippingMethod> listAll() {
-    Connection con = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    List<ShippingMethod> methods = new ArrayList<ShippingMethod>();
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("SELECT id, code, name, fee, is_active, sort_order FROM shipping_methods ORDER BY sort_order");
-      rs = ps.executeQuery();
-      while (rs.next()) {
-        methods.add(mapMethod(rs));
-      }
-      return methods;
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(rs, ps, con);
+    public List<ShippingMethod> listActive() {
+        return jdbcTemplate.query(
+            "SELECT id, code, name, fee, is_active, sort_order FROM shipping_methods WHERE is_active = TRUE ORDER BY sort_order",
+            (rs, rowNum) -> mapMethod(rs));
     }
-  }
 
-  public ShippingMethod findByCode(String code) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("SELECT id, code, name, fee, is_active, sort_order FROM shipping_methods WHERE code = ?");
-      ps.setString(1, code);
-      rs = ps.executeQuery();
-      if (rs.next()) {
-        return mapMethod(rs);
-      }
-      return null;
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(rs, ps, con);
+    public List<ShippingMethod> listAll() {
+        return jdbcTemplate.query(
+            "SELECT id, code, name, fee, is_active, sort_order FROM shipping_methods ORDER BY sort_order",
+            (rs, rowNum) -> mapMethod(rs));
     }
-  }
 
-  public void insert(ShippingMethod method) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("INSERT INTO shipping_methods(id, code, name, fee, is_active, sort_order) VALUES(?,?,?,?,?,?)");
-      ps.setString(1, method.getId());
-      ps.setString(2, method.getCode());
-      ps.setString(3, method.getName());
-      ps.setBigDecimal(4, method.getFee());
-      ps.setBoolean(5, method.isActive());
-      ps.setInt(6, method.getSortOrder());
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
+    public ShippingMethod findByCode(String code) {
+        var results = jdbcTemplate.query(
+            "SELECT id, code, name, fee, is_active, sort_order FROM shipping_methods WHERE code = ?",
+            (rs, rowNum) -> mapMethod(rs), code);
+        return results.isEmpty() ? null : results.get(0);
     }
-  }
 
-  public void update(ShippingMethod method) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("UPDATE shipping_methods SET name = ?, fee = ?, is_active = ?, sort_order = ? WHERE code = ?");
-      ps.setString(1, method.getName());
-      ps.setBigDecimal(2, method.getFee());
-      ps.setBoolean(3, method.isActive());
-      ps.setInt(4, method.getSortOrder());
-      ps.setString(5, method.getCode());
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
+    public void insert(ShippingMethod method) {
+        jdbcTemplate.update(
+            "INSERT INTO shipping_methods(id, code, name, fee, is_active, sort_order) VALUES(?,?,?,?,?,?)",
+            method.getId(), method.getCode(), method.getName(), method.getFee(), method.isActive(), method.getSortOrder());
     }
-  }
 
-  private ShippingMethod mapMethod(ResultSet rs) throws SQLException {
-    ShippingMethod method = new ShippingMethod();
-    method.setId(rs.getString("id"));
-    method.setCode(rs.getString("code"));
-    method.setName(rs.getString("name"));
-    method.setFee(rs.getBigDecimal("fee"));
-    method.setActive(rs.getBoolean("is_active"));
-    method.setSortOrder(rs.getInt("sort_order"));
-    return method;
-  }
+    public void update(ShippingMethod method) {
+        jdbcTemplate.update(
+            "UPDATE shipping_methods SET name = ?, fee = ?, is_active = ?, sort_order = ? WHERE code = ?",
+            method.getName(), method.getFee(), method.isActive(), method.getSortOrder(), method.getCode());
+    }
+
+    private ShippingMethod mapMethod(java.sql.ResultSet rs) throws java.sql.SQLException {
+        ShippingMethod m = new ShippingMethod();
+        m.setId(rs.getString("id"));
+        m.setCode(rs.getString("code"));
+        m.setName(rs.getString("name"));
+        m.setFee(rs.getBigDecimal("fee"));
+        m.setActive(rs.getBoolean("is_active"));
+        m.setSortOrder(rs.getInt("sort_order"));
+        return m;
+    }
 }

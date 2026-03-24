@@ -1,42 +1,28 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="skishop" uri="http://skishop.com/tags" %>
 <h2>注文管理</h2>
-<logic:empty name="orders">
-  <p>注文データがありません。</p>
-</logic:empty>
-<logic:notEmpty name="orders">
+<c:if test="${empty orders}"><p>注文データがありません。</p></c:if>
+<c:if test="${not empty orders}">
   <table border="1">
-    <tr>
-      <th>注文番号</th>
-      <th>状態</th>
-      <th>支払状態</th>
-      <th>合計</th>
-      <th>詳細</th>
-      <th>更新</th>
-    </tr>
-    <logic:iterate id="order" name="orders">
-      <bean:define id="orderId" name="order" property="id" type="java.lang.String"/>
-      <bean:define id="orderStatus" name="order" property="status" type="java.lang.String"/>
-      <bean:define id="paymentStatus" name="order" property="paymentStatus" type="java.lang.String"/>
+    <tr><th>注文番号</th><th>状態</th><th>支払状態</th><th>合計</th><th>詳細</th><th>更新</th></tr>
+    <c:forEach items="${orders}" var="order">
       <tr>
-        <td><bean:write name="order" property="orderNumber" filter="true"/></td>
-        <td><bean:write name="order" property="status" filter="true"/></td>
-        <td><bean:write name="order" property="paymentStatus" filter="true"/></td>
-        <td><bean:write name="order" property="totalAmount" filter="true"/></td>
+        <td><c:out value="${order.orderNumber}"/></td>
+        <td><c:out value="${order.status}"/></td>
+        <td><c:out value="${order.paymentStatus}"/></td>
+        <td><c:out value="${order.totalAmount}"/></td>
+        <td><a href="<c:url value='/admin/orders/detail'/>?orderId=${order.id}">詳細</a></td>
         <td>
-          <html:link page="/admin/orders/detail.do" paramId="orderId" paramName="order" paramProperty="id">詳細</html:link>
-        </td>
-        <td>
-          <html:form action="/admin/order/update.do" method="post">
-            <html:hidden property="orderId" value="<%= org.apache.struts.util.ResponseUtils.filter(orderId) %>"/>
-            <html:text property="status" value="<%= org.apache.struts.util.ResponseUtils.filter(orderStatus) %>" size="10"/>
-            <html:text property="paymentStatus" value="<%= org.apache.struts.util.ResponseUtils.filter(paymentStatus) %>" size="10"/>
-            <html:token/>
-            <html:submit value="更新"/>
-          </html:form>
+          <form action="<c:url value='/admin/order/update'/>" method="post">
+            <input type="hidden" name="orderId" value="${order.id}"/>
+            <input type="text" name="status" value="${order.status}" size="10"/>
+            <input type="text" name="paymentStatus" value="${order.paymentStatus}" size="10"/>
+            <skishop:csrfToken/>
+            <button type="submit">更新</button>
+          </form>
         </td>
       </tr>
-    </logic:iterate>
+    </c:forEach>
   </table>
-</logic:notEmpty>
+</c:if>

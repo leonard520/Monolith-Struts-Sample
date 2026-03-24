@@ -1,90 +1,48 @@
 package com.skishop.dao.inventory;
 
-import com.skishop.common.dao.AbstractDao;
-import com.skishop.common.dao.DaoException;
 import com.skishop.domain.inventory.Inventory;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
-public class InventoryDaoImpl extends AbstractDao implements InventoryDao {
-  public Inventory findByProductId(String productId) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    ResultSet rs = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("SELECT id, product_id, quantity, reserved_quantity, status FROM inventory WHERE product_id = ?");
-      ps.setString(1, productId);
-      rs = ps.executeQuery();
-      if (rs.next()) {
-        Inventory inventory = new Inventory();
-        inventory.setId(rs.getString("id"));
-        inventory.setProductId(rs.getString("product_id"));
-        inventory.setQuantity(rs.getInt("quantity"));
-        inventory.setReservedQuantity(rs.getInt("reserved_quantity"));
-        inventory.setStatus(rs.getString("status"));
-        return inventory;
-      }
-      return null;
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(rs, ps, con);
-    }
-  }
+@Repository
+public class InventoryDaoImpl implements InventoryDao {
+    private final JdbcTemplate jdbcTemplate;
 
-  public void insert(Inventory inventory) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("INSERT INTO inventory(id, product_id, quantity, reserved_quantity, status) VALUES(?,?,?,?,?)");
-      ps.setString(1, inventory.getId());
-      ps.setString(2, inventory.getProductId());
-      ps.setInt(3, inventory.getQuantity());
-      ps.setInt(4, inventory.getReservedQuantity());
-      ps.setString(5, inventory.getStatus());
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
+    public InventoryDaoImpl(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
     }
-  }
 
-  public void updateQuantity(String productId, int quantity, String status) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("UPDATE inventory SET quantity = ?, status = ? WHERE product_id = ?");
-      ps.setInt(1, quantity);
-      ps.setString(2, status);
-      ps.setString(3, productId);
-      ps.executeUpdate();
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
+    public Inventory findByProductId(String productId) {
+        var results = jdbcTemplate.query(
+            "SELECT id, product_id, quantity, reserved_quantity, status FROM inventory WHERE product_id = ?",
+            (rs, rowNum) -> {
+                Inventory inv = new Inventory();
+                inv.setId(rs.getString("id"));
+                inv.setProductId(rs.getString("product_id"));
+                inv.setQuantity(rs.getInt("quantity"));
+                inv.setReservedQuantity(rs.getInt("reserved_quantity"));
+                inv.setStatus(rs.getString("status"));
+                return inv;
+            }, productId);
+        return results.isEmpty() ? null : results.get(0);
     }
-  }
 
-  public boolean reserve(String productId, int quantity) {
-    Connection con = null;
-    PreparedStatement ps = null;
-    try {
-      con = getConnection();
-      ps = con.prepareStatement("UPDATE inventory SET reserved_quantity = reserved_quantity + ? WHERE product_id = ? AND (quantity - reserved_quantity) >= ?");
-      ps.setInt(1, quantity);
-      ps.setString(2, productId);
-      ps.setInt(3, quantity);
-      return ps.executeUpdate() > 0;
-    } catch (SQLException e) {
-      throw new DaoException(e);
-    } finally {
-      closeQuietly(null, ps, con);
+    public void insert(Inventory inventory) {
+        jdbcTemplate.update(
+            "INSERT INTO inventory(id, product_id, quantity, reserved_quantity, status) VALUES(?,?,?,?,?)",
+            inventory.getId(), inventory.getProductId(), inventory.getQuantity(),
+            inventory.getReservedQuantity(), inventory.getStatus());
     }
-  }
+
+    public void updateQuantity(String productId, int quantity, String status) {
+        jdbcTemplate.update("UPDATE inventory SET quantity = ?, status = ? WHERE product_id = ?",
+            quantity, status, productId);
+    }
+
+    public boolean reserve(String productId, int quantity) {
+        int updated = jdbcTemplate.update(
+            "UPDATE inventory SET reserved_quantity = reserved_quantity + ? WHERE product_id = ? AND (quantity - reserved_quantity) >= ?",
+            quantity, productId, quantity);
+        return updated > 0;
+    }
 }

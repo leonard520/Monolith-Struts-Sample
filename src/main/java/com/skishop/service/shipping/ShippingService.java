@@ -1,28 +1,31 @@
 package com.skishop.service.shipping;
 
 import com.skishop.dao.order.OrderShippingDao;
-import com.skishop.dao.order.OrderShippingDaoImpl;
 import com.skishop.domain.order.OrderShipping;
 import java.math.BigDecimal;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ShippingService {
-  private static final BigDecimal FREE_THRESHOLD = new BigDecimal("10000");
-  private static final BigDecimal DEFAULT_FEE = new BigDecimal("800");
-  private final OrderShippingDao orderShippingDao = new OrderShippingDaoImpl();
+    private static final BigDecimal FREE_THRESHOLD = new BigDecimal("10000");
+    private static final BigDecimal DEFAULT_FEE = new BigDecimal("800");
 
-  public BigDecimal calculateShippingFee(BigDecimal amount) {
-    if (amount == null) {
-      return DEFAULT_FEE;
-    }
-    if (amount.compareTo(FREE_THRESHOLD) >= 0) {
-      return BigDecimal.ZERO;
-    }
-    return DEFAULT_FEE;
-  }
+    private final OrderShippingDao orderShippingDao;
 
-  public void saveOrderShipping(OrderShipping shipping) {
-    if (shipping != null) {
-      orderShippingDao.insert(shipping);
+    public ShippingService(OrderShippingDao orderShippingDao) {
+        this.orderShippingDao = orderShippingDao;
     }
-  }
+
+    public BigDecimal calculateShipping(BigDecimal subtotal) {
+        if (subtotal == null) return DEFAULT_FEE;
+        return subtotal.compareTo(FREE_THRESHOLD) >= 0 ? BigDecimal.ZERO : DEFAULT_FEE;
+    }
+
+    public BigDecimal calculateShippingFee(BigDecimal subtotal) {
+        return calculateShipping(subtotal);
+    }
+
+    public void saveOrderShipping(OrderShipping shipping) {
+        orderShippingDao.insert(shipping);
+    }
 }

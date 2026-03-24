@@ -1,36 +1,21 @@
-<%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
-<%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
-<%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <div class="hero">
-	<h1>Azure SkiShop へようこそ</h1>
-	<p>最高品質のスキー・スノーボード用品で、あなたの冬のアドベンチャーを始めよう。</p>
-	<div class="hero-actions">
-		<html:link page="/products.do" styleClass="btn">商品を見る</html:link>
-	</div>
+    <h1>Azure SkiShop へようこそ</h1>
+    <p>最高品質のスキー・スノーボード用品で、あなたの冬のアドベンチャーを始めよう。</p>
+    <div class="hero-actions"><a href="<c:url value='/products'/>" class="btn">商品を見る</a></div>
 </div>
-
 <h2 class="page-title">おすすめスキー用品</h2>
-<logic:notEmpty name="featuredProducts">
-	<div class="products-grid">
-		<logic:iterate id="product" name="featuredProducts">
-			<bean:define id="pid" name="product" property="id" type="java.lang.String"/>
-			<div class="product-card">
-				<div class="name">
-					<html:link page="/product.do" paramId="id" paramName="product" paramProperty="id">
-						<bean:write name="product" property="name"/>
-					</html:link>
-				</div>
-				<div class="price">¥<bean:write name="product" property="price"/></div>
-				<div class="tags">
-					<logic:notEmpty name="product" property="brand"><span class="tag"><bean:write name="product" property="brand"/></span></logic:notEmpty>
-				</div>
-				<div>
-					<html:link page="/product.do" paramId="id" paramName="product" paramProperty="id" styleClass="btn">詳細を見る</html:link>
-				</div>
-			</div>
-		</logic:iterate>
-	</div>
-</logic:notEmpty>
-<logic:empty name="featuredProducts">
-	<p>おすすめ商品を準備中です。</p>
-</logic:empty>
+<c:if test="${not empty featuredProducts}">
+    <div class="products-grid">
+        <c:forEach items="${featuredProducts}" var="product">
+            <div class="product-card">
+                <div class="name"><a href="<c:url value='/product'/>?id=${product.id}"><c:out value="${product.name}"/></a></div>
+                <div class="price">¥<c:out value="${product.price}"/></div>
+                <c:if test="${not empty product.brand}"><div class="tags"><span class="tag"><c:out value="${product.brand}"/></span></div></c:if>
+                <div><a href="<c:url value='/product'/>?id=${product.id}" class="btn">詳細を見る</a></div>
+            </div>
+        </c:forEach>
+    </div>
+</c:if>
+<c:if test="${empty featuredProducts}"><p>おすすめ商品を準備中です。</p></c:if>

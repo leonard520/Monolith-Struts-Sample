@@ -1,227 +1,135 @@
 package com.skishop.service.point;
 
-import com.skishop.common.dao.DataSourceLocator;
 import com.skishop.dao.point.PointAccountDao;
-import com.skishop.dao.point.PointAccountDaoImpl;
 import com.skishop.dao.point.PointTransactionDao;
-import com.skishop.dao.point.PointTransactionDaoImpl;
 import com.skishop.domain.point.PointAccount;
 import com.skishop.domain.point.PointTransaction;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.UUID;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
+@Service
 public class PointService {
-  private final PointAccountDao pointAccountDao = new PointAccountDaoImpl();
-  private final PointTransactionDao pointTransactionDao = new PointTransactionDaoImpl();
+    private final PointAccountDao pointAccountDao;
+    private final PointTransactionDao pointTransactionDao;
+    private final JdbcTemplate jdbcTemplate;
 
-  public int awardPoints(String userId, String referenceId, BigDecimal totalAmount) {
-    if (userId == null || totalAmount == null) {
-      return 0;
+    public PointService(PointAccountDao pointAccountDao, PointTransactionDao pointTransactionDao, JdbcTemplate jdbcTemplate) {
+        this.pointAccountDao = pointAccountDao;
+        this.pointTransactionDao = pointTransactionDao;
+        this.jdbcTemplate = jdbcTemplate;
     }
-    int points = calculateAwardPoints(totalAmount);
-    if (points <= 0) {
-      return 0;
+
+    @Transactional
+    public int awardPoints(String userId, String referenceId, BigDecimal totalAmount) {
+        if (userId == null || totalAmount == null) return 0;
+        int points = calculateAwardPoints(totalAmount);
+        if (points <= 0) return 0;
+        ensureAccount(userId);
+        pointAccountDao.increment(userId, points);
+        PointTransaction t = new PointTransaction();
+        t.setId(UUID.randomUUID().toString());
+        t.setUserId(userId);
+        t.setType("EARN");
+        t.setAmount(points);
+        t.setReferenceId(referenceId);
+        t.setDescription("Order points");
+        t.setExpiresAt(addDays(new Date(), 365));
+        t.setExpired(false);
+        t.setCreatedAt(new Date());
+        pointTransactionDao.insert(t);
+        return points;
     }
-    ensureAccount(userId);
-    pointAccountDao.increment(userId, points);
 
-    PointTransaction transaction = new PointTransaction();
-    transaction.setId(UUID.randomUUID().toString());
-    transaction.setUserId(userId);
-    transaction.setType("EARN");
-    transaction.setAmount(points);
-    transaction.setReferenceId(referenceId);
-    transaction.setDescription("Order points");
-    transaction.setExpiresAt(addDays(new Date(), 365));
-    transaction.setExpired(false);
-    transaction.setCreatedAt(new Date());
-    pointTransactionDao.insert(transaction);
-    return points;
-  }
-
-  public void redeemPoints(String userId, int points, String referenceId) {
-    if (points <= 0) {
-      return;
+    @Transactional
+    public void redeemPoints(String userId, int points, String referenceId) {
+        if (points <= 0) return;
+        expirePoints(userId);
+        PointAccount account = ensureAccount(userId);
+        if (account.getBalance() < points) throw new IllegalArgumentException("Insufficient points");
+        pointAccountDao.increment(userId, -points);
+        pointTransactionDao.insert(buildTransaction(userId, "REDEEM", -points, referenceId, "Redeem points"));
     }
-    expirePoints(userId);
-    PointAccount account = ensureAccount(userId);
-    if (account.getBalance() < points) {
-      throw new IllegalArgumentException("Insufficient points");
+
+    @Transactional
+    public void refundPoints(String userId, int points, String referenceId) {
+        if (points <= 0) return;
+        ensureAccount(userId);
+        pointAccountDao.increment(userId, points);
+        pointTransactionDao.insert(buildTransaction(userId, "REFUND", points, referenceId, "Refund points"));
     }
-    pointAccountDao.increment(userId, -points);
-    PointTransaction transaction = buildTransaction(userId, "REDEEM", -points, referenceId, "Redeem points");
-    pointTransactionDao.insert(transaction);
-  }
 
-  public void refundPoints(String userId, int points, String referenceId) {
-    if (points <= 0) {
-      return;
+    @Transactional
+    public void revokePoints(String userId, int points, String referenceId) {
+        if (points <= 0) return;
+        ensureAccount(userId);
+        pointAccountDao.increment(userId, -points);
+        pointTransactionDao.insert(buildTransaction(userId, "REVOKE", -points, referenceId, "Revoke points"));
     }
-    ensureAccount(userId);
-    pointAccountDao.increment(userId, points);
-    PointTransaction transaction = buildTransaction(userId, "REFUND", points, referenceId, "Refund points");
-    pointTransactionDao.insert(transaction);
-  }
 
-  public void revokePoints(String userId, int points, String referenceId) {
-    if (points <= 0) {
-      return;
+    public int calculateAwardPoints(BigDecimal totalAmount) {
+        if (totalAmount == null) return 0;
+        return totalAmount.multiply(new BigDecimal("0.01")).setScale(0, RoundingMode.DOWN).intValue();
     }
-    ensureAccount(userId);
-    pointAccountDao.increment(userId, -points);
-    PointTransaction transaction = buildTransaction(userId, "REVOKE", -points, referenceId, "Revoke points");
-    pointTransactionDao.insert(transaction);
-  }
 
-  public int calculateAwardPoints(BigDecimal totalAmount) {
-    if (totalAmount == null) {
-      return 0;
+    public PointAccount getAccount(String userId) {
+        expirePoints(userId);
+        return ensureAccount(userId);
     }
-    BigDecimal points = totalAmount.multiply(new BigDecimal("0.01"));
-    return points.setScale(0, RoundingMode.DOWN).intValue();
-  }
 
-  public PointAccount getAccount(String userId) {
-    expirePoints(userId);
-    return ensureAccount(userId);
-  }
-
-  private PointAccount ensureAccount(String userId) {
-    PointAccount account = pointAccountDao.findByUserId(userId);
-    if (account == null) {
-      account = new PointAccount();
-      account.setId(UUID.randomUUID().toString());
-      account.setUserId(userId);
-      account.setBalance(0);
-      account.setLifetimeEarned(0);
-      account.setLifetimeRedeemed(0);
-      pointAccountDao.insert(account);
-    }
-    return account;
-  }
-
-  private PointTransaction buildTransaction(String userId, String type, int amount, String referenceId, String description) {
-    PointTransaction transaction = new PointTransaction();
-    transaction.setId(UUID.randomUUID().toString());
-    transaction.setUserId(userId);
-    transaction.setType(type);
-    transaction.setAmount(amount);
-    transaction.setReferenceId(referenceId);
-    transaction.setDescription(description);
-    transaction.setExpiresAt(null);
-    transaction.setExpired(false);
-    transaction.setCreatedAt(new Date());
-    return transaction;
-  }
-
-  private void expirePoints(String userId) {
-    if (userId == null) {
-      return;
-    }
-    Connection con = null;
-    PreparedStatement sumPs = null;
-    PreparedStatement updatePs = null;
-    PreparedStatement lockPs = null;
-    ResultSet rs = null;
-    try {
-      con = DataSourceLocator.getInstance().getDataSource().getConnection();
-      con.setAutoCommit(false);
-      lockPs = con.prepareStatement("SELECT id FROM point_accounts WHERE user_id = ? FOR UPDATE");
-      lockPs.setString(1, userId);
-      ResultSet lockRs = lockPs.executeQuery();
-      if (lockRs != null) {
-        lockRs.close();
-      }
-      String expirationClause = "user_id = ? AND is_expired = FALSE AND expires_at IS NOT NULL AND expires_at < ?";
-      sumPs = con.prepareStatement("SELECT COALESCE(SUM(amount), 0) FROM point_transactions WHERE " + expirationClause);
-      sumPs.setString(1, userId);
-      sumPs.setTimestamp(2, new java.sql.Timestamp(System.currentTimeMillis()));
-      rs = sumPs.executeQuery();
-      int expiredAmount = 0;
-      if (rs.next()) {
-        expiredAmount = rs.getInt(1);
-      }
-      if (expiredAmount > 0) {
-        updatePs = con.prepareStatement("UPDATE point_transactions SET is_expired = TRUE WHERE " + expirationClause);
-        updatePs.setString(1, userId);
-        updatePs.setTimestamp(2, new java.sql.Timestamp(System.currentTimeMillis()));
-        updatePs.executeUpdate();
-        PreparedStatement accountPs = null;
-        try {
-          accountPs = con.prepareStatement("UPDATE point_accounts SET balance = balance - ? WHERE user_id = ?");
-          accountPs.setInt(1, expiredAmount);
-          accountPs.setString(2, userId);
-          accountPs.executeUpdate();
-        } finally {
-          if (accountPs != null) {
-            accountPs.close();
-          }
+    private PointAccount ensureAccount(String userId) {
+        PointAccount account = pointAccountDao.findByUserId(userId);
+        if (account == null) {
+            account = new PointAccount();
+            account.setId(UUID.randomUUID().toString());
+            account.setUserId(userId);
+            account.setBalance(0);
+            account.setLifetimeEarned(0);
+            account.setLifetimeRedeemed(0);
+            pointAccountDao.insert(account);
         }
-      }
-      con.commit();
-    } catch (SQLException e) {
-      rollbackQuietly(con);
-      throw new IllegalStateException("Failed to expire points", e);
-    } finally {
-      closeQuietly(rs);
-      closeQuietly(sumPs);
-      closeQuietly(updatePs);
-      closeQuietly(lockPs);
-      closeQuietly(con);
+        return account;
     }
-  }
 
-  private Date addDays(Date base, int days) {
-    Calendar cal = Calendar.getInstance();
-    cal.setTime(base);
-    cal.add(Calendar.DAY_OF_YEAR, days);
-    return cal.getTime();
-  }
-
-  private void rollbackQuietly(Connection con) {
-    if (con != null) {
-      try {
-        con.rollback();
-      } catch (SQLException e) {
-        // ignore rollback errors
-      }
+    private PointTransaction buildTransaction(String userId, String type, int amount, String referenceId, String description) {
+        PointTransaction t = new PointTransaction();
+        t.setId(UUID.randomUUID().toString());
+        t.setUserId(userId);
+        t.setType(type);
+        t.setAmount(amount);
+        t.setReferenceId(referenceId);
+        t.setDescription(description);
+        t.setExpiresAt(null);
+        t.setExpired(false);
+        t.setCreatedAt(new Date());
+        return t;
     }
-  }
 
-  private void closeQuietly(ResultSet rs) {
-    if (rs != null) {
-      try {
-        rs.close();
-      } catch (SQLException e) {
-        // ignore cleanup errors
-      }
+    @Transactional
+    public void expirePoints(String userId) {
+        if (userId == null) return;
+        java.sql.Timestamp now = new java.sql.Timestamp(System.currentTimeMillis());
+        Integer expiredAmount = jdbcTemplate.queryForObject(
+            "SELECT COALESCE(SUM(amount), 0) FROM point_transactions WHERE user_id = ? AND is_expired = FALSE AND expires_at IS NOT NULL AND expires_at < ?",
+            Integer.class, userId, now);
+        if (expiredAmount != null && expiredAmount > 0) {
+            jdbcTemplate.update(
+                "UPDATE point_transactions SET is_expired = TRUE WHERE user_id = ? AND is_expired = FALSE AND expires_at IS NOT NULL AND expires_at < ?",
+                userId, now);
+            jdbcTemplate.update("UPDATE point_accounts SET balance = balance - ? WHERE user_id = ?",
+                expiredAmount, userId);
+        }
     }
-  }
 
-  private void closeQuietly(PreparedStatement ps) {
-    if (ps != null) {
-      try {
-        ps.close();
-      } catch (SQLException e) {
-        // ignore cleanup errors
-      }
+    private Date addDays(Date base, int days) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(base);
+        cal.add(Calendar.DAY_OF_YEAR, days);
+        return cal.getTime();
     }
-  }
-
-  private void closeQuietly(Connection con) {
-    if (con != null) {
-      try {
-        con.close();
-      } catch (SQLException e) {
-        // ignore cleanup errors
-      }
-    }
-  }
 }
