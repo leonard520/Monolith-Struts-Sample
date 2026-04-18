@@ -1,0 +1,83 @@
+# Gate: plan-to-tasks — Validated by t4 quality gate
+# Auditor: teamlead (t4) — independent of t3 producer
+metadata:
+  gate: plan-to-tasks
+  validated_by: t4
+  validated_at: "2026-04-18T04:07Z"
+  source_plan: ".github/modernize/artifacts/t3-teamlead-plan.md"
+
+validation:
+  passed: true
+  plan_items_total: 30
+  plan_items_covered: 30
+  coverage_percentage: 100.0
+  total_tasks: 38
+  orphan_tasks: 0
+  errors: []
+
+checklist:
+  every_plan_item_has_task: true
+  plan_coverage_100_percent: true
+  all_tasks_have_plan_ref: true
+  task_ids_sequential_no_duplicates: true
+  rewrite_source_annotations_present: true
+  requirement_mapping_shows_chain: true
+
+plan_item_coverage:
+  - { item: "1.1", tasks: ["T001"], plan_ref: true, source_ref: "N/A (scaffold)" }
+  - { item: "1.2", tasks: ["T001"], plan_ref: true, source_ref: "N/A (scaffold)" }
+  - { item: "1.3", tasks: ["T002"], plan_ref: true, source_ref: true }
+  - { item: "1.4", tasks: ["T003"], plan_ref: true, source_ref: true }
+  - { item: "1.5", tasks: ["T003"], plan_ref: true, source_ref: true }
+  - { item: "1.6", tasks: ["T003"], plan_ref: true, source_ref: true }
+  - { item: "1.7", tasks: ["T003"], plan_ref: true, source_ref: true }
+  - { item: "2.1", tasks: ["T004"], plan_ref: true, source_ref: true }
+  - { item: "2.2", tasks: ["T004"], plan_ref: true, source_ref: "N/A (new config)" }
+  - { item: "3.1", tasks: ["T005"], plan_ref: true, source_ref: true }
+  - { item: "3.2", tasks: ["T006"], plan_ref: true, source_ref: true }
+  - { item: "3.3", tasks: ["T007"], plan_ref: true, source_ref: true }
+  - { item: "3.4", tasks: ["T008"], plan_ref: true, source_ref: true }
+  - { item: "3.5", tasks: ["T009"], plan_ref: true, source_ref: true }
+  - { item: "3.6", tasks: ["T010"], plan_ref: true, source_ref: true }
+  - { item: "3.7", tasks: ["T011"], plan_ref: true, source_ref: true }
+  - { item: "4.1", tasks: ["T012"], plan_ref: true, source_ref: true }
+  - { item: "4.2", tasks: ["T013"], plan_ref: true, source_ref: true }
+  - { item: "4.3", tasks: ["T014"], plan_ref: true, source_ref: true }
+  - { item: "4.4", tasks: ["T015"], plan_ref: true, source_ref: true }
+  - { item: "4.5", tasks: ["T016"], plan_ref: true, source_ref: true }
+  - { item: "4.6", tasks: ["T017"], plan_ref: true, source_ref: true }
+  - { item: "5.1", tasks: ["T018"], plan_ref: true, source_ref: true }
+  - { item: "5.2", tasks: ["T019"], plan_ref: true, source_ref: true }
+  - { item: "5.3", tasks: ["T020"], plan_ref: true, source_ref: true }
+  - { item: "5.4", tasks: ["T021"], plan_ref: true, source_ref: true }
+  - { item: "6.1+6.2", tasks: ["T022"], plan_ref: true, source_ref: true }
+  - { item: "6.3", tasks: ["T023"], plan_ref: true, source_ref: true }
+  - { item: "7.1+7.2", tasks: ["T024"], plan_ref: true, source_ref: true }
+  - { item: "7.3", tasks: ["T025"], plan_ref: true, source_ref: true }
+  - { item: "7.4", tasks: ["T026"], plan_ref: true, source_ref: true }
+  - { item: "8.1+8.2", tasks: ["T027", "T028"], plan_ref: true, source_ref: true }
+  - { item: "8.3", tasks: ["T029", "T030"], plan_ref: true, source_ref: true }
+  - { item: "9.1+9.2", tasks: ["T031", "T032"], plan_ref: true, source_ref: true }
+  - { item: "9.3", tasks: ["T033"], plan_ref: true, source_ref: true }
+  - { item: "10.1+10.2", tasks: ["T034"], plan_ref: true, source_ref: true }
+  - { item: "10.3", tasks: ["T035"], plan_ref: true, source_ref: true }
+  - { item: "10.4", tasks: ["T036"], plan_ref: true, source_ref: true }
+  - { item: "10.5", tasks: ["T037"], plan_ref: true, source_ref: true }
+  - { item: "11.1+11.2+11.3", tasks: ["T038"], plan_ref: true, source_ref: "N/A (integration)" }
+
+findings:
+  - id: "F1"
+    severity: "LOW"
+    category: "Consistency"
+    location: "t2-architect vs t3-teamlead-plan"
+    summary: "Architecture (t2) lists PointDao(Impl) as single DAO; plan (t3) correctly splits into PointAccountDao + PointTransactionDao matching source. Plan is more accurate."
+    recommendation: "Informational — no action needed. Plan follows source truth."
+
+  - id: "F2"
+    severity: "LOW"
+    category: "URL Coverage"
+    location: "t3 Phase 8.3 (T029), Phase 10.3 (T035)"
+    summary: "Plan includes /orders/detail?id= and /admin/orders/detail URLs that exist in source but are NOT in the constitution's URL Routing Contract or tested by api-test.sh."
+    recommendation: "Acceptable — these URLs exist in the source Struts actions (OrderDetailAction, AdminOrderDetailAction) and are needed for functional equivalence. Not a constitution violation since C-I says 'every URL in the source must be reproduced'."
+
+verdict: "PASS"

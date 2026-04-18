@@ -1,3 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Fri Jan 16 23:28:39 JST 2026
+#Sat Apr 18 15:01:38 CST 2026
+plexus-utils-1.5.8.jar>central-https=
 plexus-utils-1.5.8.pom>central=
+plexus-utils-1.5.8.pom>central-https=

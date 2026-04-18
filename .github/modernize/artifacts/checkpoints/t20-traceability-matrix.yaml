@@ -1,0 +1,221 @@
+# Traceability Matrix — Completeness Gate t20
+# Generated: 2026-04-18T07:13Z
+# Auditor: teamlead (t20)
+
+metadata:
+  generated: "2026-04-18T07:13Z"
+  constitution: "t1-teamlead-constitution.md"
+  plan: "t3-teamlead-plan.md"
+  test_evidence: "t19.3-tester.md"
+  prior_checkpoints:
+    - "checkpoints/spec-to-plan.yaml"
+    - "checkpoints/plan-to-tasks.yaml"
+
+traceability:
+  # === Constitution Principles ===
+  - requirement: "C-I"
+    description: "Functional Equivalence — Match the source, not improve it"
+    priority: "P1"
+    plan_items: ["1.1-11.3"]
+    tasks: ["T001-T038"]
+    evidence:
+      - "api-test.sh: 65/65 PASS (t19.3-tester.md)"
+      - "Independent re-run by teamlead: 65/65 PASS"
+      - "All 28 URL routes from constitution work identically"
+    status: "complete"
+
+  - requirement: "C-II"
+    description: "Keep the JSPs — Struts tags → JSTL/Spring, Tiles → jsp:include"
+    priority: "P1"
+    plan_items: ["1.5", "5.4", "6.3", "7.4", "8.2", "8.3", "9.2", "9.3", "10.2-10.5"]
+    tasks: ["T003", "T021", "T023", "T026", "T028", "T030", "T032", "T033", "T034-T037"]
+    evidence:
+      - "32+ JSP files under monolith-new/src/main/webapp/WEB-INF/jsp/"
+      - "No Thymeleaf (grep: zero th: matches)"
+      - "jsp:include used for header/footer/messages layout (20+ matches)"
+      - "Struts tags removed; JSTL/Spring form tags used"
+      - "_csrfToken hidden field present in all POST forms (20+ matches)"
+    status: "complete"
+
+  - requirement: "C-III"
+    description: "New project in monolith-new/, clean separation"
+    priority: "P1"
+    plan_items: ["1.1"]
+    tasks: ["T001"]
+    evidence:
+      - "monolith-new/ exists with pom.xml (groupId=com.skishop, artifactId=skishop-app, version=2.0.0)"
+      - "git diff HEAD -- src/ shows zero changes to original source"
+      - "Spring Boot 3.2.5 parent, Java 21, executable JAR packaging"
+    status: "complete"
+
+  - requirement: "C-IV"
+    description: "Preserve data model exactly"
+    priority: "P1"
+    plan_items: ["1.4", "2.1", "3.1-3.7"]
+    tasks: ["T003", "T004", "T005-T011"]
+    evidence:
+      - "schema.sql and data.sql present in monolith-new/src/main/resources/"
+      - "19 @Repository DAOs using JdbcTemplate (no JPA)"
+      - "24+ domain POJOs in com.skishop.domain.*"
+      - "Zero JpaRepository/spring-data-jpa references"
+    status: "complete"
+
+  - requirement: "C-V"
+    description: "Security parity"
+    priority: "P1"
+    plan_items: ["1.3", "1.7", "5.2"]
+    tasks: ["T002", "T003", "T019"]
+    evidence:
+      - "Spring Security 6.x configured via SecurityConfig.java"
+      - "PasswordHasher.java copied verbatim (SHA-256+salt, 1000 iterations)"
+      - "_csrfToken hidden field in all POST forms"
+      - "Role-based auth (USER/ADMIN) gates correct endpoints"
+      - "Unauthenticated → redirect to /login (tests 10.1-10.6 pass)"
+      - "Security audit (t18): PASS with only LOW-severity findings"
+    status: "complete"
+
+  - requirement: "C-VI"
+    description: "Build and run contract"
+    priority: "P1"
+    plan_items: ["1.1", "1.2"]
+    tasks: ["T001"]
+    evidence:
+      - "mvn -f monolith-new/pom.xml clean package -DskipTests -q succeeds"
+      - "java -jar monolith-new/target/skishop-app-2.0.0.jar --spring.profiles.active=h2 starts"
+      - "Application responds on port 8080 with HTTP 200 at / within ~3s"
+      - "Fully functional with H2 in-memory (no external deps)"
+    status: "complete"
+
+  - requirement: "C-VII"
+    description: "No over-engineering"
+    priority: "P1"
+    plan_items: ["All"]
+    tasks: ["All"]
+    evidence:
+      - "Zero Lombok/MapStruct/Swagger/OpenAPI references"
+      - "Zero JPA/Hibernate references"
+      - "JdbcTemplate used for all data access"
+      - "Simple POJOs for domain and form objects"
+      - "@ControllerAdvice for exception handling (replaces Struts global-exceptions)"
+      - "No microservices, no event sourcing, no CQRS"
+    status: "complete"
+
+  # === Test Script Sections ===
+  - requirement: "TS-1"
+    description: "Home Page tests"
+    priority: "P1"
+    plan_items: ["5.3"]
+    tasks: ["T020"]
+    evidence: "2/2 PASS"
+    status: "complete"
+
+  - requirement: "TS-2"
+    description: "Product Pages tests"
+    priority: "P1"
+    plan_items: ["6.1", "6.3"]
+    tasks: ["T022", "T023"]
+    evidence: "6/6 PASS"
+    status: "complete"
+
+  - requirement: "TS-3"
+    description: "Authentication tests"
+    priority: "P1"
+    plan_items: ["5.2"]
+    tasks: ["T019"]
+    evidence: "5/5 PASS"
+    status: "complete"
+
+  - requirement: "TS-4"
+    description: "Registration tests"
+    priority: "P1"
+    plan_items: ["5.2"]
+    tasks: ["T019"]
+    evidence: "5/5 PASS"
+    status: "complete"
+
+  - requirement: "TS-5"
+    description: "Login with new user"
+    priority: "P1"
+    plan_items: ["5.2"]
+    tasks: ["T019"]
+    evidence: "1/1 PASS"
+    status: "complete"
+
+  - requirement: "TS-6"
+    description: "Password Reset tests"
+    priority: "P1"
+    plan_items: ["5.2"]
+    tasks: ["T019"]
+    evidence: "6/6 PASS"
+    status: "complete"
+
+  - requirement: "TS-7"
+    description: "Cart tests"
+    priority: "P1"
+    plan_items: ["7.2"]
+    tasks: ["T024"]
+    evidence: "2/2 PASS"
+    status: "complete"
+
+  - requirement: "TS-8"
+    description: "Coupon tests"
+    priority: "P1"
+    plan_items: ["7.3"]
+    tasks: ["T025"]
+    evidence: "3/3 PASS"
+    status: "complete"
+
+  - requirement: "TS-9"
+    description: "Checkout & Orders tests"
+    priority: "P1"
+    plan_items: ["8.1", "8.2"]
+    tasks: ["T027", "T028"]
+    evidence: "3/3 PASS"
+    status: "complete"
+
+  - requirement: "TS-10"
+    description: "Protected Pages (Unauthenticated) tests"
+    priority: "P1"
+    plan_items: ["1.3"]
+    tasks: ["T002"]
+    evidence: "6/6 PASS"
+    status: "complete"
+
+  - requirement: "TS-11"
+    description: "Authenticated User Flows tests"
+    priority: "P1"
+    plan_items: ["9.1", "9.2", "9.3", "8.1"]
+    tasks: ["T031", "T032", "T033", "T027"]
+    evidence: "9/9 PASS"
+    status: "complete"
+
+  - requirement: "TS-12"
+    description: "Order Operations tests"
+    priority: "P1"
+    plan_items: ["8.3"]
+    tasks: ["T029"]
+    evidence: "2/2 PASS"
+    status: "complete"
+
+  - requirement: "TS-13"
+    description: "Product Search Variations tests"
+    priority: "P1"
+    plan_items: ["6.1"]
+    tasks: ["T022"]
+    evidence: "11/11 PASS"
+    status: "complete"
+
+  - requirement: "TS-14"
+    description: "Edge Cases tests"
+    priority: "P1"
+    plan_items: ["11.3"]
+    tasks: ["T038"]
+    evidence: "4/4 PASS"
+    status: "complete"
+
+summary:
+  total_requirements: 21
+  complete: 21
+  broken: 0
+  partial: 0
+  coverage_percentage: 100.0

@@ -1,0 +1,6 @@
+Thank you for your order with SkiShop.
+
+Order Number: {{orderNumber}}
+Total Amount: {{totalAmount}}
+
+We will notify you when your order ships.

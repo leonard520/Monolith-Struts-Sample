@@ -1,0 +1,303 @@
+# Plan-to-Tasks Traceability Checkpoint
+metadata:
+  generated: "2026-04-18"
+  source_plan: ".github/modernize/artifacts/t3-teamlead-plan.md"
+  target_tasks: ".github/modernize/artifacts/t3-teamlead-plan.md"
+
+summary:
+  total_plan_items: 30
+  covered_plan_items: 30
+  missing_plan_items: 0
+  coverage_percentage: 100.0
+  total_tasks_generated: 38
+  orphan_tasks: 0
+
+phases:
+  - phase_id: "Phase-1"
+    phase_name: "Project Scaffold & Configuration"
+    items:
+      - item_id: "1.1"
+        description: "Create monolith-new/ Maven project"
+        tasks:
+          - task_id: "T001"
+            description: "Create pom.xml, Application.java, properties"
+      - item_id: "1.2"
+        description: "Create Spring Boot configuration files"
+        tasks:
+          - task_id: "T001"
+            description: "application.properties, H2/PG profiles"
+      - item_id: "1.3"
+        description: "Create Spring config classes"
+        tasks:
+          - task_id: "T002"
+            description: "SecurityConfig, WebMvcConfig, DataSourceConfig, CsrfTokenConfig"
+      - item_id: "1.4"
+        description: "Copy static resources"
+        tasks:
+          - task_id: "T003"
+            description: "schema.sql, data.sql, messages.properties, assets/"
+      - item_id: "1.5"
+        description: "Create common layout JSPs"
+        tasks:
+          - task_id: "T003"
+            description: "header, footer, messages, error, index JSPs"
+      - item_id: "1.6"
+        description: "Create GlobalExceptionHandler and RequestIdInterceptor"
+        tasks:
+          - task_id: "T003"
+            description: "GlobalExceptionHandler.java, RequestIdInterceptor.java"
+      - item_id: "1.7"
+        description: "Copy PasswordHasher verbatim"
+        tasks:
+          - task_id: "T003"
+            description: "PasswordHasher.java verbatim copy"
+
+  - phase_id: "Phase-2"
+    phase_name: "Domain & Common"
+    items:
+      - item_id: "2.1"
+        description: "Copy 24 domain POJOs"
+        tasks:
+          - task_id: "T004"
+            description: "Copy domain POJOs, update packages"
+      - item_id: "2.2"
+        description: "Create AppConfig"
+        tasks:
+          - task_id: "T004"
+            description: "AppConfig.java"
+
+  - phase_id: "Phase-3"
+    phase_name: "DAO Layer"
+    items:
+      - item_id: "3.1"
+        description: "User domain DAOs"
+        tasks:
+          - task_id: "T005"
+            description: "UserDao, SecurityLogDao, PasswordResetTokenDao"
+      - item_id: "3.2"
+        description: "Product domain DAOs"
+        tasks:
+          - task_id: "T006"
+            description: "ProductDao, PriceDao, CategoryDao"
+      - item_id: "3.3"
+        description: "Cart domain DAOs"
+        tasks:
+          - task_id: "T007"
+            description: "CartDao, CartItemDao"
+      - item_id: "3.4"
+        description: "Order domain DAOs"
+        tasks:
+          - task_id: "T008"
+            description: "OrderDao, OrderShippingDao, ReturnDao"
+      - item_id: "3.5"
+        description: "Payment & Inventory DAOs"
+        tasks:
+          - task_id: "T009"
+            description: "PaymentDao, InventoryDao (@Transactional)"
+      - item_id: "3.6"
+        description: "Coupon DAOs"
+        tasks:
+          - task_id: "T010"
+            description: "CouponDao, CouponUsageDao"
+      - item_id: "3.7"
+        description: "Supporting DAOs"
+        tasks:
+          - task_id: "T011"
+            description: "ShippingMethod, UserAddress, Point, EmailQueue DAOs"
+
+  - phase_id: "Phase-4"
+    phase_name: "Service Layer"
+    items:
+      - item_id: "4.1"
+        description: "Auth services"
+        tasks:
+          - task_id: "T012"
+            description: "AuthService + AuthResult"
+      - item_id: "4.2"
+        description: "User & catalog services"
+        tasks:
+          - task_id: "T013"
+            description: "UserService, ProductService, CategoryService"
+      - item_id: "4.3"
+        description: "Cart & coupon services"
+        tasks:
+          - task_id: "T014"
+            description: "CartService, CouponService"
+      - item_id: "4.4"
+        description: "Order orchestration"
+        tasks:
+          - task_id: "T015"
+            description: "OrderFacade, OrderFacadeImpl, OrderService"
+      - item_id: "4.5"
+        description: "Payment, inventory, shipping, tax"
+        tasks:
+          - task_id: "T016"
+            description: "PaymentService, InventoryService, ShippingService, TaxService"
+      - item_id: "4.6"
+        description: "Points & mail"
+        tasks:
+          - task_id: "T017"
+            description: "PointService, MailService, PaymentInfo, PaymentResult"
+
+  - phase_id: "Phase-5"
+    phase_name: "Auth & Home Module"
+    items:
+      - item_id: "5.1"
+        description: "Auth form POJOs"
+        tasks:
+          - task_id: "T018"
+            description: "LoginForm, RegisterForm, PasswordReset forms"
+      - item_id: "5.2"
+        description: "AuthController"
+        tasks:
+          - task_id: "T019"
+            description: "AuthController with all auth endpoints"
+      - item_id: "5.3"
+        description: "HomeController"
+        tasks:
+          - task_id: "T020"
+            description: "HomeController GET /, /home"
+      - item_id: "5.4"
+        description: "Auth JSP views"
+        tasks:
+          - task_id: "T021"
+            description: "Migrate login, register, password JSPs"
+
+  - phase_id: "Phase-6"
+    phase_name: "Product Catalog Module"
+    items:
+      - item_id: "6.1"
+        description: "ProductController"
+        tasks:
+          - task_id: "T022"
+            description: "ProductController + ProductSearchForm"
+      - item_id: "6.2"
+        description: "ProductSearchForm"
+        tasks:
+          - task_id: "T022"
+            description: "Combined with controller task"
+      - item_id: "6.3"
+        description: "Product JSP views"
+        tasks:
+          - task_id: "T023"
+            description: "Migrate products/*.jsp"
+
+  - phase_id: "Phase-7"
+    phase_name: "Cart & Coupons Module"
+    items:
+      - item_id: "7.1"
+        description: "Cart/Coupon forms"
+        tasks:
+          - task_id: "T024"
+            description: "AddCartForm (combined with controller)"
+      - item_id: "7.2"
+        description: "CartController"
+        tasks:
+          - task_id: "T024"
+            description: "CartController + session/cookie management"
+      - item_id: "7.3"
+        description: "CouponController"
+        tasks:
+          - task_id: "T025"
+            description: "CouponController + CouponForm"
+      - item_id: "7.4"
+        description: "Cart/Coupon JSP views"
+        tasks:
+          - task_id: "T026"
+            description: "Migrate cart/view.jsp, coupons/available.jsp"
+
+  - phase_id: "Phase-8"
+    phase_name: "Checkout & Orders Module"
+    items:
+      - item_id: "8.1"
+        description: "CheckoutForm + CheckoutController"
+        tasks:
+          - task_id: "T027"
+            description: "CheckoutController + CheckoutForm"
+      - item_id: "8.2"
+        description: "Checkout JSP views"
+        tasks:
+          - task_id: "T028"
+            description: "Migrate checkout.jsp, confirmation.jsp"
+      - item_id: "8.3"
+        description: "OrderController + Order JSPs"
+        tasks:
+          - task_id: "T029"
+            description: "OrderController"
+          - task_id: "T030"
+            description: "Migrate orders/*.jsp"
+
+  - phase_id: "Phase-9"
+    phase_name: "Account, Points & Address Module"
+    items:
+      - item_id: "9.1"
+        description: "AddressController + AddressForm"
+        tasks:
+          - task_id: "T031"
+            description: "AddressController + AddressForm"
+      - item_id: "9.2"
+        description: "Account JSP views"
+        tasks:
+          - task_id: "T032"
+            description: "Migrate account/*.jsp"
+      - item_id: "9.3"
+        description: "PointController + JSP"
+        tasks:
+          - task_id: "T033"
+            description: "PointController + balance.jsp"
+
+  - phase_id: "Phase-10"
+    phase_name: "Admin Module"
+    items:
+      - item_id: "10.1"
+        description: "Admin forms"
+        tasks:
+          - task_id: "T034"
+            description: "AdminProductForm (combined with controller)"
+      - item_id: "10.2"
+        description: "AdminProductController + JSPs"
+        tasks:
+          - task_id: "T034"
+            description: "AdminProductController + admin/products/*.jsp"
+      - item_id: "10.3"
+        description: "AdminOrderController + JSPs"
+        tasks:
+          - task_id: "T035"
+            description: "AdminOrderController + admin/orders/*.jsp"
+      - item_id: "10.4"
+        description: "AdminCouponController + JSPs"
+        tasks:
+          - task_id: "T036"
+            description: "AdminCouponController + admin/coupons/*.jsp"
+      - item_id: "10.5"
+        description: "AdminShippingController + JSPs"
+        tasks:
+          - task_id: "T037"
+            description: "AdminShippingController + admin/shipping/*.jsp"
+
+  - phase_id: "Phase-11"
+    phase_name: "Integration & Polish"
+    items:
+      - item_id: "11.1"
+        description: "Run api-test.sh"
+        tasks:
+          - task_id: "T038"
+            description: "Run tests, fix failures, verify screenshots"
+      - item_id: "11.2"
+        description: "Visual verification"
+        tasks:
+          - task_id: "T038"
+            description: "Combined with test run"
+      - item_id: "11.3"
+        description: "Edge case fixes"
+        tasks:
+          - task_id: "T038"
+            description: "Combined with test run"
+
+missing_plan_items: []
+
+orphan_tasks: []
+
+validation:
+  result: "PASS"
+  notes: "All 30 plan items covered by 38 tasks. No orphan tasks."

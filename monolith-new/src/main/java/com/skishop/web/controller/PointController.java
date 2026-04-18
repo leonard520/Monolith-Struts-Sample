@@ -1,0 +1,32 @@
+package com.skishop.web.controller;
+
+import com.skishop.domain.point.PointAccount;
+import com.skishop.domain.user.User;
+import com.skishop.service.point.PointService;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class PointController {
+
+    private final PointService pointService;
+
+    public PointController(PointService pointService) {
+        this.pointService = pointService;
+    }
+
+    @GetMapping("/points")
+    public String balance(HttpServletRequest request, Model model) {
+        HttpSession session = request.getSession(false);
+        User user = session != null ? (User) session.getAttribute("loginUser") : null;
+        if (user == null) {
+            return "redirect:/login";
+        }
+        PointAccount account = pointService.getAccount(user.getId());
+        model.addAttribute("pointBalance", account);
+        return "points/balance";
+    }
+}

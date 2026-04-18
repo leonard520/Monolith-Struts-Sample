@@ -1,0 +1,293 @@
+# Spec-to-Plan Traceability Checkpoint
+metadata:
+  generated: "2026-04-18"
+  source_spec: ".github/modernize/artifacts/t1-teamlead-constitution.md"
+  target_plan: ".github/modernize/artifacts/t3-teamlead-plan.md"
+
+summary:
+  total_requirements: 22
+  covered_requirements: 22
+  missing_requirements: 0
+  coverage_percentage: 100.0
+
+requirements:
+  - req_id: "C-I"
+    req_description: "Functional equivalence — every URL works identically"
+    priority: "P1"
+    plan_mapping:
+      phase: "All"
+      phase_name: "All Phases"
+      items:
+        - item_id: "1.1-11.3"
+          description: "All implementation phases contribute to functional equivalence"
+    notes: "api-test.sh (55 tests) is the acceptance oracle"
+
+  - req_id: "C-II"
+    req_description: "Keep JSPs — Struts tags → JSTL/Spring, Tiles → jsp:include"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1,5,6,7,8,9,10"
+      phase_name: "Scaffold + all user story phases"
+      items:
+        - item_id: "1.5"
+          description: "Create layout JSPs with jsp:include"
+        - item_id: "5.4"
+          description: "Migrate auth JSPs"
+        - item_id: "6.3"
+          description: "Migrate product JSPs"
+        - item_id: "7.4"
+          description: "Migrate cart/coupon JSPs"
+        - item_id: "8.2"
+          description: "Migrate checkout JSPs"
+        - item_id: "8.3"
+          description: "Migrate order JSPs"
+        - item_id: "9.2"
+          description: "Migrate account JSPs"
+        - item_id: "9.3"
+          description: "Migrate points JSP"
+        - item_id: "10.2-10.5"
+          description: "Migrate admin JSPs"
+
+  - req_id: "C-III"
+    req_description: "New project in monolith-new/ directory"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1"
+      phase_name: "Project Scaffold"
+      items:
+        - item_id: "1.1"
+          description: "Create monolith-new/ Maven project"
+
+  - req_id: "C-IV"
+    req_description: "Preserve data model exactly"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1,2,3"
+      phase_name: "Scaffold + Domain + DAO"
+      items:
+        - item_id: "1.4"
+          description: "Copy schema.sql and data.sql"
+        - item_id: "2.1"
+          description: "Copy domain POJOs"
+        - item_id: "3.1-3.7"
+          description: "Port all DAOs preserving SQL"
+
+  - req_id: "C-V"
+    req_description: "Security parity"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1,5"
+      phase_name: "Scaffold + Auth"
+      items:
+        - item_id: "1.3"
+          description: "SecurityConfig with URL auth, CSRF _csrfToken"
+        - item_id: "1.7"
+          description: "PasswordHasher verbatim copy"
+        - item_id: "5.1"
+          description: "Auth form beans"
+        - item_id: "5.2"
+          description: "AuthController manual authentication"
+
+  - req_id: "C-VI"
+    req_description: "Build and run contract"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1"
+      phase_name: "Project Scaffold"
+      items:
+        - item_id: "1.1"
+          description: "pom.xml with correct artifact name"
+        - item_id: "1.2"
+          description: "application.properties for port/profiles"
+
+  - req_id: "C-VII"
+    req_description: "No over-engineering"
+    priority: "P1"
+    plan_mapping:
+      phase: "All"
+      phase_name: "All"
+      items:
+        - item_id: "All"
+          description: "JdbcTemplate only, no JPA/Lombok/Swagger"
+
+  - req_id: "TS-1"
+    req_description: "Home page tests (GET /, /home)"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-5"
+      phase_name: "Auth & Home"
+      items:
+        - item_id: "5.3"
+          description: "HomeController"
+
+  - req_id: "TS-2"
+    req_description: "Product pages (list, detail, search, filter)"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-6"
+      phase_name: "Product Catalog"
+      items:
+        - item_id: "6.1"
+          description: "ProductController"
+        - item_id: "6.3"
+          description: "Product JSP views"
+
+  - req_id: "TS-3"
+    req_description: "Authentication tests (login, invalid, validation)"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-5"
+      phase_name: "Auth & Home"
+      items:
+        - item_id: "5.1"
+          description: "LoginForm with validation"
+        - item_id: "5.2"
+          description: "AuthController login"
+        - item_id: "5.4"
+          description: "login.jsp"
+
+  - req_id: "TS-4"
+    req_description: "Registration tests (validation, duplicate, success)"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-5"
+      phase_name: "Auth & Home"
+      items:
+        - item_id: "5.1"
+          description: "RegisterForm with validation"
+        - item_id: "5.2"
+          description: "AuthController register"
+        - item_id: "5.4"
+          description: "register.jsp"
+
+  - req_id: "TS-5"
+    req_description: "Login with newly registered user"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-5"
+      phase_name: "Auth & Home"
+      items:
+        - item_id: "5.2"
+          description: "AuthController login flow"
+
+  - req_id: "TS-6"
+    req_description: "Password reset (forgot, reset, invalid token)"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-5"
+      phase_name: "Auth & Home"
+      items:
+        - item_id: "5.1"
+          description: "PasswordReset forms"
+        - item_id: "5.2"
+          description: "AuthController password reset"
+        - item_id: "5.4"
+          description: "password/*.jsp"
+
+  - req_id: "TS-7"
+    req_description: "Cart tests (view, add items)"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-7"
+      phase_name: "Cart & Coupons"
+      items:
+        - item_id: "7.2"
+          description: "CartController"
+        - item_id: "7.4"
+          description: "cart/view.jsp"
+
+  - req_id: "TS-8"
+    req_description: "Coupon tests (list, apply valid/invalid)"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-7"
+      phase_name: "Cart & Coupons"
+      items:
+        - item_id: "7.3"
+          description: "CouponController"
+        - item_id: "7.4"
+          description: "coupons/available.jsp"
+
+  - req_id: "TS-9"
+    req_description: "Checkout and order placement"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-8"
+      phase_name: "Checkout & Orders"
+      items:
+        - item_id: "8.1"
+          description: "CheckoutController + CheckoutForm"
+        - item_id: "8.2"
+          description: "checkout.jsp, confirmation.jsp"
+
+  - req_id: "TS-10"
+    req_description: "Protected pages (unauthenticated redirect, ADMIN 403)"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1"
+      phase_name: "Scaffold"
+      items:
+        - item_id: "1.3"
+          description: "SecurityConfig URL authorization rules"
+
+  - req_id: "TS-11"
+    req_description: "Authenticated user flows (addresses, points, orders)"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-9"
+      phase_name: "Account, Points & Address"
+      items:
+        - item_id: "9.1"
+          description: "AddressController"
+        - item_id: "9.2"
+          description: "Account JSPs"
+        - item_id: "9.3"
+          description: "PointController"
+
+  - req_id: "TS-12"
+    req_description: "Order operations (cancel, return)"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-8"
+      phase_name: "Checkout & Orders"
+      items:
+        - item_id: "8.3"
+          description: "OrderController cancel/return"
+
+  - req_id: "TS-13"
+    req_description: "Product search variations"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-6"
+      phase_name: "Product Catalog"
+      items:
+        - item_id: "6.1"
+          description: "ProductController search/filter params"
+
+  - req_id: "TS-14"
+    req_description: "Edge cases (404, empty ID, huge page)"
+    priority: "P2"
+    plan_mapping:
+      phase: "Phase-11"
+      phase_name: "Integration & Polish"
+      items:
+        - item_id: "11.3"
+          description: "Edge case fixes"
+
+  - req_id: "R1"
+    req_description: "Password hashing algorithm exact replication"
+    priority: "P1"
+    plan_mapping:
+      phase: "Phase-1"
+      phase_name: "Scaffold"
+      items:
+        - item_id: "1.7"
+          description: "Copy PasswordHasher.java verbatim"
+
+missing_requirements: []
+
+orphan_plan_items: []
+
+validation:
+  result: "PASS"
+  notes: "All 22 requirements mapped to plan items. 100% coverage."
