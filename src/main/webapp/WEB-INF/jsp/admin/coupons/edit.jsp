@@ -1,7 +1,7 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
-<h2>クーポン編集</h2>
+<h2>编辑优惠券</h2>
 <html:form action="/admin/coupon/edit.do" method="post">
   <html:hidden property="id"/>
   <table>

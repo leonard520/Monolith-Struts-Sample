@@ -1,18 +1,18 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
-<h2>注文管理</h2>
+<h2>订单管理</h2>
 <logic:empty name="orders">
-  <p>注文データがありません。</p>
+  <p>暂无订单数据。</p>
 </logic:empty>
 <logic:notEmpty name="orders">
   <table border="1">
     <tr>
-      <th>注文番号</th>
-      <th>状態</th>
-      <th>支払状態</th>
-      <th>合計</th>
-      <th>詳細</th>
+      <th>订单号</th>
+      <th>状态</th>
+      <th>支付状态</th>
+      <th>总计</th>
+      <th>详情</th>
       <th>更新</th>
     </tr>
     <logic:iterate id="order" name="orders">
@@ -25,7 +25,7 @@
         <td><bean:write name="order" property="paymentStatus" filter="true"/></td>
         <td><bean:write name="order" property="totalAmount" filter="true"/></td>
         <td>
-          <html:link page="/admin/orders/detail.do" paramId="orderId" paramName="order" paramProperty="id">詳細</html:link>
+          <html:link page="/admin/orders/detail.do" paramId="orderId" paramName="order" paramProperty="id">详情</html:link>
         </td>
         <td>
           <html:form action="/admin/order/update.do" method="post">

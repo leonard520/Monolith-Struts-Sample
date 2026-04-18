@@ -1,7 +1,7 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
-<h2>パスワード再発行</h2>
+<h2>找回密码</h2>
 <html:form action="/password/forgot.do" method="post">
   <table>
     <tr>
@@ -10,6 +10,6 @@
     </tr>
   </table>
   <html:token/>
-  <html:submit value="送信"/>
+  <html:submit value="发送"/>
 </html:form>
-<p><html:link page="/login.do">ログインへ戻る</html:link></p>
+<p><html:link page="/login.do">返回登录</html:link></p>

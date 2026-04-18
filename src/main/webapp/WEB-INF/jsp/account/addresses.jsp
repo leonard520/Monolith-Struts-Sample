@@ -1,19 +1,19 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
-<h2>住所帳</h2>
-<p><html:link page="/addresses/save.do">新しい住所を追加</html:link></p>
+<h2>地址簿</h2>
+<p><html:link page="/addresses/save.do">添加新地址</html:link></p>
 <logic:empty name="addresses">
-  <p>登録済み住所がありません。</p>
+  <p>暂无已保存的地址。</p>
 </logic:empty>
 <logic:notEmpty name="addresses">
   <table border="1">
     <tr>
-      <th>ラベル</th>
-      <th>宛名</th>
-      <th>住所</th>
-      <th>電話</th>
-      <th>既定</th>
+      <th>标签</th>
+      <th>收件人</th>
+      <th>地址</th>
+      <th>电话</th>
+      <th>默认</th>
     </tr>
     <logic:iterate id="address" name="addresses">
       <tr>

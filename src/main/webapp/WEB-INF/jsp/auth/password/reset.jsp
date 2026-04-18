@@ -1,7 +1,7 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
-<h2>パスワードリセット</h2>
+<h2>重置密码</h2>
 <html:form action="/password/reset.do" method="post">
   <table>
     <tr>
@@ -18,5 +18,5 @@
     </tr>
   </table>
   <html:token/>
-  <html:submit value="更新"/>
+  <html:submit value="确认重置"/>
 </html:form>

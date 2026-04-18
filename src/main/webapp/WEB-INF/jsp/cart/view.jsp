@@ -1,17 +1,17 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
-<h2 class="page-title">カート</h2>
+<h2 class="page-title">购物车</h2>
 <logic:empty name="cartItems">
-  <div class="card">カートは空です。</div>
+  <div class="card">购物车为空。</div>
 </logic:empty>
 <logic:notEmpty name="cartItems">
   <div class="card table-responsive">
   <table>
     <tr>
-      <th>商品名</th>
+      <th>商品名称</th>
       <th>数量</th>
-      <th>単価</th>
+      <th>单价</th>
     </tr>
     <logic:iterate id="item" name="cartItems">
       <tr>
@@ -23,19 +23,19 @@
   </table>
   </div>
   <div class="card cart-summary">
-    <p>小計: <strong><bean:write name="cartSubtotal" filter="true"/></strong></p>
+    <p>小计: <strong><bean:write name="cartSubtotal" filter="true"/></strong></p>
   <logic:present name="coupon">
-    <p>クーポン: <bean:write name="coupon" property="code" filter="true"/></p>
-    <p>割引額: <bean:write name="discountAmount" filter="true"/></p>
+    <p>优惠券: <bean:write name="coupon" property="code" filter="true"/></p>
+    <p>折扣金额: <bean:write name="discountAmount" filter="true"/></p>
   </logic:present>
   </div>
 </logic:notEmpty>
 
-<h3>クーポン適用</h3>
+<h3>使用优惠券</h3>
 <html:form action="/coupon/apply.do" method="post">
   <html:text property="code" size="20"/>
   <html:token/>
-  <html:submit value="適用"/>
+  <html:submit value="应用"/>
 </html:form>
 
-<p><html:link page="/checkout.do" styleClass="btn">チェックアウトへ</html:link></p>
+<p><html:link page="/checkout.do" styleClass="btn">前往结算</html:link></p>

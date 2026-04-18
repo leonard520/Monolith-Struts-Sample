@@ -4,7 +4,7 @@
 <%
   String cartIdValue = session != null ? (String) session.getAttribute("cartId") : null;
 %>
-<h2>チェックアウト</h2>
+<h2>结算</h2>
 <html:form action="/checkout.do" method="post">
   <html:hidden property="cartId" value="<%= org.apache.struts.util.ResponseUtils.filter(cartIdValue != null ? cartIdValue : \"\") %>"/>
   <table>
@@ -16,8 +16,8 @@
       <th><bean:message key="label.paymentMethod"/></th>
       <td>
         <html:select property="paymentMethod">
-          <html:option value="CARD">カード</html:option>
-          <html:option value="COD">代金引換</html:option>
+          <html:option value="CARD">信用卡</html:option>
+          <html:option value="COD">货到付款</html:option>
         </html:select>
       </td>
     </tr>
@@ -47,5 +47,5 @@
     </tr>
   </table>
   <html:token/>
-  <html:submit value="注文確定"/>
+  <html:submit value="确认下单"/>
 </html:form>

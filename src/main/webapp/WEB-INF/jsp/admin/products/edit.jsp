@@ -1,7 +1,7 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
-<h2>商品編集</h2>
+<h2>商品编辑</h2>
 <html:form action="/admin/product/edit.do" method="post">
   <html:hidden property="id"/>
   <table>
@@ -42,5 +42,5 @@
   <html:submit value="更新"/>
 </html:form>
 <logic:present name="updatedAt">
-  <p>更新日時: <bean:write name="updatedAt" filter="true"/></p>
+  <p>更新时间: <bean:write name="updatedAt" filter="true"/></p>
 </logic:present>

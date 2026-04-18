@@ -1,19 +1,19 @@
 <%@ taglib uri="/WEB-INF/struts-html.tld" prefix="html" %>
 <%@ taglib uri="/WEB-INF/struts-bean.tld" prefix="bean" %>
 <%@ taglib uri="/WEB-INF/struts-logic.tld" prefix="logic" %>
-<h2>利用可能なクーポン</h2>
+<h2>可用优惠券</h2>
 <logic:empty name="coupons">
-  <p>利用可能なクーポンはありません。</p>
+  <p>暂无可用优惠券。</p>
 </logic:empty>
 <logic:notEmpty name="coupons">
   <table border="1">
     <tr>
-      <th>コード</th>
-      <th>タイプ</th>
-      <th>割引値</th>
-      <th>最低金額</th>
-      <th>最大割引</th>
-      <th>期限</th>
+      <th>代码</th>
+      <th>类型</th>
+      <th>折扣値</th>
+      <th>最低金额</th>
+      <th>最大折扣</th>
+      <th>有效期</th>
     </tr>
     <logic:iterate id="coupon" name="coupons">
       <tr>
